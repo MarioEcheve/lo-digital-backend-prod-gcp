@@ -1,0 +1,44 @@
+{
+  "name": "Comuna",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "contrato",
+      "otherEntityRelationshipName": "comuna",
+      "relationshipName": "contrato"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "dependencia",
+      "otherEntityRelationshipName": "comuna",
+      "relationshipName": "dependencia"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "region",
+      "otherEntityRelationshipName": "comuna",
+      "relationshipName": "region",
+      "otherEntityField": "nombre"
+    }
+  ],
+  "changelogDate": "20200914210319",
+  "entityTableName": "comuna",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

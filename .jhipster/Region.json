@@ -1,0 +1,43 @@
+{
+  "name": "Region",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "dependencia",
+      "otherEntityRelationshipName": "region",
+      "relationshipName": "dependencia"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "contrato",
+      "otherEntityRelationshipName": "region",
+      "relationshipName": "contrato"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "comuna",
+      "otherEntityRelationshipName": "region",
+      "relationshipName": "comuna"
+    }
+  ],
+  "changelogDate": "20200914210219",
+  "entityTableName": "region",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
