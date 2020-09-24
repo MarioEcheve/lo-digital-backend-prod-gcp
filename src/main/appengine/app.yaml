@@ -6,7 +6,7 @@
 
 runtime: java11
 instance_class: B4_1G
-service: default
+service: backend
 handlers:
 - url: /(.*)
   script: auto

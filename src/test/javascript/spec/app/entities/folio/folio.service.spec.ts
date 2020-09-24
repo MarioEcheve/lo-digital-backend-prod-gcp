@@ -48,7 +48,10 @@ describe('Service Tests', () => {
         'AAAAAAA',
         'image/png',
         'AAAAAAA',
-        0
+        0,
+        false,
+        'AAAAAAA',
+        'AAAAAAA'
       );
     });
 
@@ -127,6 +130,9 @@ describe('Service Tests', () => {
             pdfFirmado: 'BBBBBB',
             pdfLectura: 'BBBBBB',
             idReceptor: 1,
+            poseeFolioReferencia: true,
+            emisorMarcado: 'BBBBBB',
+            tipoFolioMarcado: 'BBBBBB',
           },
           elemDefault
         );
@@ -173,6 +179,9 @@ describe('Service Tests', () => {
             pdfFirmado: 'BBBBBB',
             pdfLectura: 'BBBBBB',
             idReceptor: 1,
+            poseeFolioReferencia: true,
+            emisorMarcado: 'BBBBBB',
+            tipoFolioMarcado: 'BBBBBB',
           },
           elemDefault
         );

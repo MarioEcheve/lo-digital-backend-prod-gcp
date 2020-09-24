@@ -18,7 +18,7 @@ management:
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: 'jdbc:postgresql://google/lodigital?cloudSqlInstance=libro-obra-digital:us-central1:lo-digital-bd&socketFactory=com.google.cloud.sql.postgres.SocketFactory'
+    url: 'jdbc:postgresql://google/lodigital?cloudSqlInstance=lo-digital:northamerica-northeast1:backend&socketFactory=com.google.cloud.sql.postgres.SocketFactory'
     username: 'fvilches'
     password: '292403'
     hikari:
