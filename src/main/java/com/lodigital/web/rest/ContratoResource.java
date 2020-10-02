@@ -116,4 +116,10 @@ public class ContratoResource {
         contratoRepository.deleteById(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
     }
+    @GetMapping("/buscaContratoPorDependencia/{idDependencia}")
+    public List<Contrato> buscaContratoPorDependencia(@PathVariable Long idDependencia) {
+        log.debug("REST request to get usuario dependencias  por usuario : {}", idDependencia);
+        return contratoRepository.buscaContratoPorDependencia(idDependencia);
+    }
+    
 }
