@@ -19,10 +19,15 @@ public interface UsuarioDependenciaRepository extends JpaRepository<UsuarioDepen
     @Query("select usuarioDependencia from UsuarioDependencia usuarioDependencia where usuarioDependencia.usuario.login = ?#{principal.username}")
     List<UsuarioDependencia> findByUsuarioIsCurrentUser();
 
-    @Query("select usuarioDependencia from UsuarioDependencia "+
-            " usuarioDependencia inner join usuarioDependencia.usuario usuario"+
-            " where usuario.id = :idUsuario")
+    @Query("select a from UsuarioDependencia a "+
+            "inner join a.usuario b "+
+            "where b.id = :idUsuario")
     List<UsuarioDependencia> findUserByUsuarioDependencia(@Param("idUsuario") Long idUsuario);
+
+    @Query("select a from UsuarioDependencia a "+
+            "inner join a.dependencia b "+
+            "where b.id = :idDependencia")
+    List<UsuarioDependencia> findUserByUsuarioDependencia2(@Param("idDependencia") Long idDependencia);
 
     @Query(value="select c2.id , c2.fecha_inicio_servicio , c2.fecha_termino_servicio, " +
                     "c2.fecha_termino_acceso, c2.observaciones_servicio, c2.codigo, "+

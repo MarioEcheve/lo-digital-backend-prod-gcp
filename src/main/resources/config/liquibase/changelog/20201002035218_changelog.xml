@@ -1,0 +1,650 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-1">
+        <createSequence incrementBy="50" sequenceName="sequence_generator" startValue="1"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-2">
+        <createTable tableName="actividad_rubro">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="actividad_rubroPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-3">
+        <createTable tableName="archivo">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="archivoPK"/>
+            </column>
+            <column name="archivo" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="archivo_content_type" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="descripcion" type="VARCHAR(500)"/>
+            <column name="size" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="folio_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-4">
+        <createTable tableName="comuna">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="comunaPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="region_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-5">
+        <createTable tableName="contrato">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="contratoPK"/>
+            </column>
+            <column name="actualizar_contrato_admin_con" type="BOOLEAN"/>
+            <column name="actualizar_contrato_admin_man" type="BOOLEAN"/>
+            <column name="cargo" type="VARCHAR(50)"/>
+            <column name="codigo" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="crea_libro_admin_con" type="BOOLEAN"/>
+            <column name="crea_libro_admin_man" type="BOOLEAN"/>
+            <column name="descripcion" type="VARCHAR(200)"/>
+            <column name="direccion" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email_contacto" type="VARCHAR(50)"/>
+            <column name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_inicio" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_inicio_servicio" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_termino" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_termino_acceso" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_termino_servicio" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="id_dependencia_contratista" type="INTEGER"/>
+            <column name="modalidad_otra" type="VARCHAR(25)"/>
+            <column name="monto" type="FLOAT8"/>
+            <column name="nombre" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nombre_contacto" type="VARCHAR(50)"/>
+            <column name="observaciones" type="VARCHAR(200)"/>
+            <column name="observaciones_servicio" type="VARCHAR(250)"/>
+            <column name="telefono_contacto" type="VARCHAR(50)"/>
+            <column name="telefono_contacto_secundario" type="VARCHAR(50)"/>
+            <column name="tipo_otro" type="VARCHAR(25)"/>
+            <column name="comuna_id" type="BIGINT"/>
+            <column name="dependencia_mandante_id" type="BIGINT"/>
+            <column name="estado_servicio_id" type="BIGINT"/>
+            <column name="modalidad_id" type="BIGINT"/>
+            <column name="region_id" type="BIGINT"/>
+            <column name="tipo_contrato_id" type="BIGINT"/>
+            <column name="tipo_moneda_id" type="BIGINT"/>
+            <column name="tipo_monto_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-6">
+        <createTable tableName="dependencia">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="dependenciaPK"/>
+            </column>
+            <column name="cargo_contacto_comercial" type="VARCHAR(255)"/>
+            <column name="cargo_contacto_tecnico" type="VARCHAR(255)"/>
+            <column name="descripcion" type="VARCHAR(150)"/>
+            <column name="direccion" type="VARCHAR(110)"/>
+            <column name="email_contacto_comercial" type="VARCHAR(255)"/>
+            <column name="email_contacto_tecnico" type="VARCHAR(255)"/>
+            <column name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="nombre" type="VARCHAR(100)"/>
+            <column name="nombre_contacto_comercial" type="VARCHAR(255)"/>
+            <column name="nombre_contacto_tecnico" type="VARCHAR(255)"/>
+            <column name="telefono_principal_contacto_comercial" type="VARCHAR(255)"/>
+            <column name="telefono_principal_contacto_tecnico" type="VARCHAR(255)"/>
+            <column name="telefono_secundario_contacto_comercial" type="VARCHAR(255)"/>
+            <column name="telefono_secundario_contacto_tecnico" type="VARCHAR(255)"/>
+            <column name="comuna_id" type="BIGINT"/>
+            <column name="entidad_id" type="BIGINT"/>
+            <column name="region_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-7">
+        <createTable tableName="entidad">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="entidadPK"/>
+            </column>
+            <column name="direccion" type="VARCHAR(100)"/>
+            <column name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="nombre" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rut" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="actividad_rubro_id" type="BIGINT"/>
+            <column name="tipo_entidad_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-8">
+        <createTable tableName="estado_libro">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="estado_libroPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-9">
+        <createTable tableName="estado_respuesta">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="estado_respuestaPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-10">
+        <createTable tableName="estado_servicio">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="estado_servicioPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-11">
+        <createTable tableName="folio">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="folioPK"/>
+            </column>
+            <column name="anotacion" type="VARCHAR(12000)"/>
+            <column name="asunto" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="emisor_marcado" type="VARCHAR(255)"/>
+            <column name="entidad_creacion" type="BOOLEAN"/>
+            <column name="estado_folio" type="BOOLEAN"/>
+            <column name="estado_lectura" type="BOOLEAN"/>
+            <column name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_firma" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_lectura" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_requerida" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="id_folio_relacionado" type="INTEGER"/>
+            <column name="id_folio_respuesta" type="INTEGER"/>
+            <column name="id_receptor" type="INTEGER"/>
+            <column name="id_usuario_creador" type="INTEGER"/>
+            <column name="id_usuario_firma" type="INTEGER"/>
+            <column name="id_usuario_lectura" type="INTEGER"/>
+            <column name="idlibro_relacionado" type="INTEGER"/>
+            <column name="numero_folio" type="INTEGER"/>
+            <column name="pdf_firmado" type="BYTEA"/>
+            <column name="pdf_firmado_content_type" type="VARCHAR(255)"/>
+            <column name="pdf_lectura" type="BYTEA"/>
+            <column name="pdf_lectura_content_type" type="VARCHAR(255)"/>
+            <column name="posee_folio_referencia" type="BOOLEAN"/>
+            <column name="requiere_respuesta" type="BOOLEAN"/>
+            <column name="tipo_folio_marcado" type="VARCHAR(255)"/>
+            <column name="estado_respuesta_id" type="BIGINT"/>
+            <column name="libro_id" type="BIGINT"/>
+            <column name="tipo_folio_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-12">
+        <createTable tableName="folio_folio_referencia">
+            <column name="folio_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="folio_referencia_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-13">
+        <createTable tableName="folio_referencia">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="folio_referenciaPK"/>
+            </column>
+            <column name="asunto" type="VARCHAR(255)"/>
+            <column name="id_folio_origen" type="INTEGER"/>
+            <column name="id_folio_referencia" type="INTEGER"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-14">
+        <createTable tableName="ges_alerta">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="ges_alertaPK"/>
+            </column>
+            <column name="fecha_alerta" type="TIMESTAMP WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="nota" type="VARCHAR(500)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="folio_id" type="BIGINT"/>
+            <column name="usuario_libro_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-15">
+        <createTable tableName="ges_favorito">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="ges_favoritoPK"/>
+            </column>
+            <column name="favorito" type="BOOLEAN"/>
+            <column name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="nota" type="VARCHAR(500)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="folio_id" type="BIGINT"/>
+            <column name="usuario_libro_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-16">
+        <createTable tableName="ges_nota">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="ges_notaPK"/>
+            </column>
+            <column name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="nota" type="VARCHAR(500)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="folio_id" type="BIGINT"/>
+            <column name="usuario_libro_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-17">
+        <createTable tableName="jhi_authority">
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jhi_authorityPK"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-18">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-19">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-20">
+        <createTable tableName="jhi_user">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jhi_userPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="activated" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="activation_key" type="VARCHAR(20)"/>
+            <column name="email" type="VARCHAR(254)"/>
+            <column name="first_name" type="VARCHAR(50)"/>
+            <column name="image_url" type="VARCHAR(256)"/>
+            <column name="lang_key" type="VARCHAR(10)"/>
+            <column name="last_name" type="VARCHAR(50)"/>
+            <column name="login" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password_hash" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reset_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="reset_key" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-21">
+        <createTable tableName="jhi_user_authority">
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="authority_name" type="VARCHAR(50)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-22">
+        <createTable tableName="libro">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="libroPK"/>
+            </column>
+            <column name="apertura_contratista" type="BOOLEAN"/>
+            <column name="apertura_mandante" type="BOOLEAN"/>
+            <column name="cierre_contratista" type="BOOLEAN"/>
+            <column name="cierre_mandante" type="BOOLEAN"/>
+            <column name="codigo" type="VARCHAR(20)"/>
+            <column name="descripcion" type="VARCHAR(250)"/>
+            <column name="escritura_contratista" type="BOOLEAN"/>
+            <column name="escritura_mandante" type="BOOLEAN"/>
+            <column name="fecha_apertura" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_cierre" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="lectura_contratista" type="BOOLEAN"/>
+            <column name="lectura_mandante" type="BOOLEAN"/>
+            <column name="nombre" type="VARCHAR(60)"/>
+            <column name="contrato_id" type="BIGINT"/>
+            <column name="estado_libro_id" type="BIGINT"/>
+            <column name="tipo_firma_id" type="BIGINT"/>
+            <column name="tipo_libro_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-23">
+        <createTable tableName="modalidad">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="modalidadPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-24">
+        <createTable tableName="perfil_usuario_dependencia">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="perfil_usuario_dependenciaPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-25">
+        <createTable tableName="region">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="regionPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-26">
+        <createTable tableName="tipo_contrato">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="tipo_contratoPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-27">
+        <createTable tableName="tipo_entidad">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="tipo_entidadPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-28">
+        <createTable tableName="tipo_firma">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="tipo_firmaPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-29">
+        <createTable tableName="tipo_folio">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="tipo_folioPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(20)"/>
+            <column name="visible_auxliar" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="visible_contratista" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="visible_maestro" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="visible_mandante" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-30">
+        <createTable tableName="tipo_libro">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="tipo_libroPK"/>
+            </column>
+            <column name="descripcion" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-31">
+        <createTable tableName="tipo_moneda">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="tipo_monedaPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-32">
+        <createTable tableName="tipo_monto">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="tipo_montoPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-33">
+        <createTable tableName="tipo_usuario_dependencia">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="tipo_usuario_dependenciaPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-34">
+        <createTable tableName="usuario">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuarioPK"/>
+            </column>
+            <column name="apellido_materno" type="VARCHAR(100)"/>
+            <column name="apellido_paterno" type="VARCHAR(100)"/>
+            <column name="email_principal" type="VARCHAR(50)"/>
+            <column name="email_secundario" type="VARCHAR(50)"/>
+            <column name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="nombre" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="profesion_oficio" type="VARCHAR(80)"/>
+            <column name="rut" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="telefono_principal" type="VARCHAR(50)"/>
+            <column name="telefono_secundario" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-35">
+        <createTable tableName="usuario_dependencia">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuario_dependenciaPK"/>
+            </column>
+            <column name="estado" type="BOOLEAN"/>
+            <column name="fecha_activacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_desactivacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="nombre" type="VARCHAR(255)"/>
+            <column name="rut" type="VARCHAR(255)"/>
+            <column name="dependencia_id" type="BIGINT"/>
+            <column name="perfil_usuario_dependencia_id" type="BIGINT"/>
+            <column name="usuario_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-36">
+        <createTable tableName="usuario_libro">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuario_libroPK"/>
+            </column>
+            <column name="admin_activo" type="BOOLEAN"/>
+            <column name="cargo_funcion" type="VARCHAR(255)"/>
+            <column name="estado" type="BOOLEAN"/>
+            <column name="fecha_creacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fecha_modificacion" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="libro_id" type="BIGINT"/>
+            <column name="perfil_usuario_libro_id" type="BIGINT"/>
+            <column name="usuario_dependencia_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-37">
+        <createTable tableName="usuario_libro_perfil">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuario_libro_perfilPK"/>
+            </column>
+            <column name="nombre" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-38">
+        <addUniqueConstraint columnNames="email" constraintName="UC_JHI_USEREMAIL_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-39">
+        <addUniqueConstraint columnNames="login" constraintName="UC_JHI_USERLOGIN_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-40">
+        <addForeignKeyConstraint baseColumnNames="folio_id" baseTableName="ges_nota" constraintName="FK172n8nikf48elffsjb2gd4g6o" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="folio" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-41">
+        <addForeignKeyConstraint baseColumnNames="usuario_libro_id" baseTableName="ges_alerta" constraintName="FK21h37oxuklldoa08ulfh5cq4j" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="usuario_libro" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-42">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_user_authority" constraintName="FK290okww5jujghp4el5i7mgwu0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-43">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-44">
+        <addForeignKeyConstraint baseColumnNames="authority_name" baseTableName="jhi_user_authority" constraintName="FK4psxl0jtx6nr7rhqbynr6itoc" deferrable="false" initiallyDeferred="false" referencedColumnNames="name" referencedTableName="jhi_authority" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-45">
+        <addForeignKeyConstraint baseColumnNames="dependencia_id" baseTableName="usuario_dependencia" constraintName="FK780oxrvj0sskr0kfhahbt0knw" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dependencia" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-46">
+        <addForeignKeyConstraint baseColumnNames="tipo_moneda_id" baseTableName="contrato" constraintName="FK7u6n6580jbx3p2cbqxedkgf6g" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_moneda" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-47">
+        <addForeignKeyConstraint baseColumnNames="perfil_usuario_dependencia_id" baseTableName="usuario_dependencia" constraintName="FK970yvs1ce77dbmfgwcjjoilkr" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="perfil_usuario_dependencia" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-48">
+        <addForeignKeyConstraint baseColumnNames="folio_id" baseTableName="ges_alerta" constraintName="FK9g31i9qp1m7hugg0tvotu8gp" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="folio" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-49">
+        <addForeignKeyConstraint baseColumnNames="libro_id" baseTableName="usuario_libro" constraintName="FKar6u71t8jdr37peuvigl94cfi" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="libro" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-50">
+        <addForeignKeyConstraint baseColumnNames="entidad_id" baseTableName="dependencia" constraintName="FKcbe64ouq54q8gvg2qq1w7moc2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="entidad" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-51">
+        <addForeignKeyConstraint baseColumnNames="folio_referencia_id" baseTableName="folio_folio_referencia" constraintName="FKceao8g7baksb1uwmfmxomh5e9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="folio_referencia" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-52">
+        <addForeignKeyConstraint baseColumnNames="usuario_dependencia_id" baseTableName="usuario_libro" constraintName="FKcef61odnalpt7dauyjobpq073" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="usuario_dependencia" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-53">
+        <addForeignKeyConstraint baseColumnNames="tipo_folio_id" baseTableName="folio" constraintName="FKcuajf91sbv9nh3stpmih94qwm" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_folio" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-54">
+        <addForeignKeyConstraint baseColumnNames="region_id" baseTableName="dependencia" constraintName="FKcv7a86jcddddnhsbqfsxewruc" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="region" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-55">
+        <addForeignKeyConstraint baseColumnNames="dependencia_mandante_id" baseTableName="contrato" constraintName="FKcy5w257cykoxk31pstd1re1i2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="dependencia" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-56">
+        <addForeignKeyConstraint baseColumnNames="folio_id" baseTableName="archivo" constraintName="FKd6lf2tcd3hq71i9v56n407pvk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="folio" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-57">
+        <addForeignKeyConstraint baseColumnNames="contrato_id" baseTableName="libro" constraintName="FKe9rkqmanbko5o1vnn0avc38rh" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="contrato" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-58">
+        <addForeignKeyConstraint baseColumnNames="tipo_libro_id" baseTableName="libro" constraintName="FKegmvep1021lmssr5h836obqpx" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_libro" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-59">
+        <addForeignKeyConstraint baseColumnNames="usuario_libro_id" baseTableName="ges_nota" constraintName="FKfabhjdrv16txviysqe4oue6sp" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="usuario_libro" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-60">
+        <addForeignKeyConstraint baseColumnNames="tipo_contrato_id" baseTableName="contrato" constraintName="FKfvv99c7rjafypivyur599lrpu" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_contrato" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-61">
+        <addForeignKeyConstraint baseColumnNames="comuna_id" baseTableName="dependencia" constraintName="FKgink7ni013uj5mevqdl3n5hxn" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="comuna" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-62">
+        <addForeignKeyConstraint baseColumnNames="actividad_rubro_id" baseTableName="entidad" constraintName="FKgqat6pi85l27p1k61fegjfrwx" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="actividad_rubro" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-63">
+        <addForeignKeyConstraint baseColumnNames="usuario_libro_id" baseTableName="ges_favorito" constraintName="FKhuvistgj6j2vg2wr3gbswhf1o" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="usuario_libro" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-64">
+        <addForeignKeyConstraint baseColumnNames="estado_servicio_id" baseTableName="contrato" constraintName="FKhx3ktwg88i68n6xmsfmjeia5c" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="estado_servicio" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-65">
+        <addForeignKeyConstraint baseColumnNames="perfil_usuario_libro_id" baseTableName="usuario_libro" constraintName="FKio64n2clr8rh2fsih3hlt5rr2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="usuario_libro_perfil" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-66">
+        <addForeignKeyConstraint baseColumnNames="tipo_monto_id" baseTableName="contrato" constraintName="FKjs10wat58wghtvru39o2o0pcv" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_monto" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-67">
+        <addForeignKeyConstraint baseColumnNames="tipo_entidad_id" baseTableName="entidad" constraintName="FKk9yurp2lddguopsma75slypyt" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_entidad" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-68">
+        <addForeignKeyConstraint baseColumnNames="usuario_id" baseTableName="usuario_dependencia" constraintName="FKmls8no0wuqjgou5yd5hwkbsqh" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-69">
+        <addForeignKeyConstraint baseColumnNames="region_id" baseTableName="contrato" constraintName="FKny2j9if5mvgjmf1lysnkjhscs" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="region" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-70">
+        <addForeignKeyConstraint baseColumnNames="tipo_firma_id" baseTableName="libro" constraintName="FKo71cnaguaxf5a63ppo88ivusp" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="tipo_firma" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-71">
+        <addForeignKeyConstraint baseColumnNames="estado_respuesta_id" baseTableName="folio" constraintName="FKpcdyh8moh280xkwglkebj1xhn" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="estado_respuesta" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-72">
+        <addForeignKeyConstraint baseColumnNames="comuna_id" baseTableName="contrato" constraintName="FKqejshvoyaur2ylrysmsmo3ohq" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="comuna" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-73">
+        <addForeignKeyConstraint baseColumnNames="folio_id" baseTableName="folio_folio_referencia" constraintName="FKr2arr12u82ypucnhlvd1urfq0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="folio" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-74">
+        <addForeignKeyConstraint baseColumnNames="folio_id" baseTableName="ges_favorito" constraintName="FKsgbhuhoum4bgcicwihw1kfdn4" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="folio" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-75">
+        <addForeignKeyConstraint baseColumnNames="modalidad_id" baseTableName="contrato" constraintName="FKssfhfs3sbbp8htei15h9wuu2a" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="modalidad" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-76">
+        <addForeignKeyConstraint baseColumnNames="libro_id" baseTableName="folio" constraintName="FKsx5rj9ea6xyw2an569oi700c7" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="libro" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-77">
+        <addForeignKeyConstraint baseColumnNames="estado_libro_id" baseTableName="libro" constraintName="FKtlam5dxooxa45nsnxsrtijdk9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="estado_libro" validate="true"/>
+    </changeSet>
+    <changeSet author="marioecheverrialopez (generated)" id="1601610752606-78">
+        <addForeignKeyConstraint baseColumnNames="region_id" baseTableName="comuna" constraintName="FKtop2papyj2urkhnpghehayki4" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="region" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
