@@ -33,6 +33,9 @@ public class Contrato implements Serializable {
     @Column(name = "fecha_termino_acceso")
     private Instant fechaTerminoAcceso;
 
+    @Column(name = "fecha_creacion")
+    private Instant fechaCreacion;
+
     @Size(max = 250)
     @Column(name = "observaciones_servicio", length = 250)
     private String observacionesServicio;
@@ -193,6 +196,19 @@ public class Contrato implements Serializable {
 
     public void setFechaTerminoAcceso(Instant fechaTerminoAcceso) {
         this.fechaTerminoAcceso = fechaTerminoAcceso;
+    }
+
+    public Instant getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public Contrato fechaCreacion(Instant fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+        return this;
+    }
+
+    public void setFechaCreacion(Instant fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 
     public String getObservacionesServicio() {
@@ -622,6 +638,7 @@ public class Contrato implements Serializable {
             ", fechaInicioServicio='" + getFechaInicioServicio() + "'" +
             ", fechaTerminoServicio='" + getFechaTerminoServicio() + "'" +
             ", fechaTerminoAcceso='" + getFechaTerminoAcceso() + "'" +
+            ", fechaCreacion='" + getFechaCreacion() + "'" +
             ", observacionesServicio='" + getObservacionesServicio() + "'" +
             ", codigo='" + getCodigo() + "'" +
             ", nombre='" + getNombre() + "'" +

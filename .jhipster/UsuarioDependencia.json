@@ -20,6 +20,14 @@
     {
       "fieldName": "estado",
       "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "fechaActivacion",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fechaDesactivacion",
+      "fieldType": "Instant"
     }
   ],
   "relationships": [

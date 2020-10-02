@@ -63,10 +63,10 @@
             <column name="fecha_lectura" type="datetime">
                 <constraints nullable="true" />
             </column>
-            <column name="asunto" type="varchar(80)">
+            <column name="asunto" type="varchar(250)">
                 <constraints nullable="false" />
             </column>
-            <column name="anotacion" type="varchar(9000)">
+            <column name="anotacion" type="varchar(12000)">
                 <constraints nullable="true" />
             </column>
             <column name="pdf_firmado" type="longblob">

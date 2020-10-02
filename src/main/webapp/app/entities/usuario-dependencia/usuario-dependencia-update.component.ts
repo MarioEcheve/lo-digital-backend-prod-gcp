@@ -35,6 +35,8 @@ export class UsuarioDependenciaUpdateComponent implements OnInit {
     fechaCreacion: [],
     fechaModificacion: [],
     estado: [],
+    fechaActivacion: [],
+    fechaDesactivacion: [],
     usuario: [],
     dependencia: [],
     perfilUsuarioDependencia: [],
@@ -55,6 +57,8 @@ export class UsuarioDependenciaUpdateComponent implements OnInit {
         const today = moment().startOf('day');
         usuarioDependencia.fechaCreacion = today;
         usuarioDependencia.fechaModificacion = today;
+        usuarioDependencia.fechaActivacion = today;
+        usuarioDependencia.fechaDesactivacion = today;
       }
 
       this.updateForm(usuarioDependencia);
@@ -77,6 +81,8 @@ export class UsuarioDependenciaUpdateComponent implements OnInit {
       fechaCreacion: usuarioDependencia.fechaCreacion ? usuarioDependencia.fechaCreacion.format(DATE_TIME_FORMAT) : null,
       fechaModificacion: usuarioDependencia.fechaModificacion ? usuarioDependencia.fechaModificacion.format(DATE_TIME_FORMAT) : null,
       estado: usuarioDependencia.estado,
+      fechaActivacion: usuarioDependencia.fechaActivacion ? usuarioDependencia.fechaActivacion.format(DATE_TIME_FORMAT) : null,
+      fechaDesactivacion: usuarioDependencia.fechaDesactivacion ? usuarioDependencia.fechaDesactivacion.format(DATE_TIME_FORMAT) : null,
       usuario: usuarioDependencia.usuario,
       dependencia: usuarioDependencia.dependencia,
       perfilUsuarioDependencia: usuarioDependencia.perfilUsuarioDependencia,
@@ -110,6 +116,12 @@ export class UsuarioDependenciaUpdateComponent implements OnInit {
         ? moment(this.editForm.get(['fechaModificacion'])!.value, DATE_TIME_FORMAT)
         : undefined,
       estado: this.editForm.get(['estado'])!.value,
+      fechaActivacion: this.editForm.get(['fechaActivacion'])!.value
+        ? moment(this.editForm.get(['fechaActivacion'])!.value, DATE_TIME_FORMAT)
+        : undefined,
+      fechaDesactivacion: this.editForm.get(['fechaDesactivacion'])!.value
+        ? moment(this.editForm.get(['fechaDesactivacion'])!.value, DATE_TIME_FORMAT)
+        : undefined,
       usuario: this.editForm.get(['usuario'])!.value,
       dependencia: this.editForm.get(['dependencia'])!.value,
       perfilUsuarioDependencia: this.editForm.get(['perfilUsuarioDependencia'])!.value,

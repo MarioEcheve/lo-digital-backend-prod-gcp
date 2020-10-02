@@ -24,7 +24,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new UsuarioDependencia(0, 'AAAAAAA', 'AAAAAAA', currentDate, currentDate, false);
+      elemDefault = new UsuarioDependencia(0, 'AAAAAAA', 'AAAAAAA', currentDate, currentDate, false, currentDate, currentDate);
     });
 
     describe('Service methods', () => {
@@ -33,6 +33,8 @@ describe('Service Tests', () => {
           {
             fechaCreacion: currentDate.format(DATE_TIME_FORMAT),
             fechaModificacion: currentDate.format(DATE_TIME_FORMAT),
+            fechaActivacion: currentDate.format(DATE_TIME_FORMAT),
+            fechaDesactivacion: currentDate.format(DATE_TIME_FORMAT),
           },
           elemDefault
         );
@@ -50,6 +52,8 @@ describe('Service Tests', () => {
             id: 0,
             fechaCreacion: currentDate.format(DATE_TIME_FORMAT),
             fechaModificacion: currentDate.format(DATE_TIME_FORMAT),
+            fechaActivacion: currentDate.format(DATE_TIME_FORMAT),
+            fechaDesactivacion: currentDate.format(DATE_TIME_FORMAT),
           },
           elemDefault
         );
@@ -58,6 +62,8 @@ describe('Service Tests', () => {
           {
             fechaCreacion: currentDate,
             fechaModificacion: currentDate,
+            fechaActivacion: currentDate,
+            fechaDesactivacion: currentDate,
           },
           returnedFromService
         );
@@ -77,6 +83,8 @@ describe('Service Tests', () => {
             fechaCreacion: currentDate.format(DATE_TIME_FORMAT),
             fechaModificacion: currentDate.format(DATE_TIME_FORMAT),
             estado: true,
+            fechaActivacion: currentDate.format(DATE_TIME_FORMAT),
+            fechaDesactivacion: currentDate.format(DATE_TIME_FORMAT),
           },
           elemDefault
         );
@@ -85,6 +93,8 @@ describe('Service Tests', () => {
           {
             fechaCreacion: currentDate,
             fechaModificacion: currentDate,
+            fechaActivacion: currentDate,
+            fechaDesactivacion: currentDate,
           },
           returnedFromService
         );
@@ -104,6 +114,8 @@ describe('Service Tests', () => {
             fechaCreacion: currentDate.format(DATE_TIME_FORMAT),
             fechaModificacion: currentDate.format(DATE_TIME_FORMAT),
             estado: true,
+            fechaActivacion: currentDate.format(DATE_TIME_FORMAT),
+            fechaDesactivacion: currentDate.format(DATE_TIME_FORMAT),
           },
           elemDefault
         );
@@ -112,6 +124,8 @@ describe('Service Tests', () => {
           {
             fechaCreacion: currentDate,
             fechaModificacion: currentDate,
+            fechaActivacion: currentDate,
+            fechaDesactivacion: currentDate,
           },
           returnedFromService
         );

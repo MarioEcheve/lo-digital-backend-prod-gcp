@@ -32,7 +32,6 @@ management:
     export:
       prometheus:
         enabled: false
-
 spring:
   devtools:
     restart:
@@ -54,10 +53,10 @@ spring:
   liquibase:
     contexts: prod
   mail:
-    host: localhost
-    port: 25
-    username:
-    password:
+    host: mail.lodigital.cl
+    port: 465
+    username: aviso@lodigital.cl
+    password: epsilon2020
   thymeleaf:
     cache: true
   sleuth:

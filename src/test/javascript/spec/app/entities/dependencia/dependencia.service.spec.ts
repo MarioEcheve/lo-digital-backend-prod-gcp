@@ -24,7 +24,24 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Dependencia(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', currentDate, currentDate);
+      elemDefault = new Dependencia(
+        0,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        currentDate,
+        currentDate,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA'
+      );
     });
 
     describe('Service methods', () => {
@@ -77,6 +94,16 @@ describe('Service Tests', () => {
             descripcion: 'BBBBBB',
             fechaCreacion: currentDate.format(DATE_TIME_FORMAT),
             fechaModificacion: currentDate.format(DATE_TIME_FORMAT),
+            nombreContactoComercial: 'BBBBBB',
+            cargoContactoComercial: 'BBBBBB',
+            telefonoPrincipalContactoComercial: 'BBBBBB',
+            telefonoSecundarioContactoComercial: 'BBBBBB',
+            emailContactoComercial: 'BBBBBB',
+            nombreContactoTecnico: 'BBBBBB',
+            cargoContactoTecnico: 'BBBBBB',
+            telefonoPrincipalContactoTecnico: 'BBBBBB',
+            telefonoSecundarioContactoTecnico: 'BBBBBB',
+            emailContactoTecnico: 'BBBBBB',
           },
           elemDefault
         );
@@ -104,6 +131,16 @@ describe('Service Tests', () => {
             descripcion: 'BBBBBB',
             fechaCreacion: currentDate.format(DATE_TIME_FORMAT),
             fechaModificacion: currentDate.format(DATE_TIME_FORMAT),
+            nombreContactoComercial: 'BBBBBB',
+            cargoContactoComercial: 'BBBBBB',
+            telefonoPrincipalContactoComercial: 'BBBBBB',
+            telefonoSecundarioContactoComercial: 'BBBBBB',
+            emailContactoComercial: 'BBBBBB',
+            nombreContactoTecnico: 'BBBBBB',
+            cargoContactoTecnico: 'BBBBBB',
+            telefonoPrincipalContactoTecnico: 'BBBBBB',
+            telefonoSecundarioContactoTecnico: 'BBBBBB',
+            emailContactoTecnico: 'BBBBBB',
           },
           elemDefault
         );

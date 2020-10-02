@@ -27,7 +27,7 @@ export class GesAlertaUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    nota: [null, [Validators.required, Validators.maxLength(100)]],
+    nota: [null, [Validators.required, Validators.maxLength(500)]],
     fechaAlerta: [null, [Validators.required]],
     fechaCreacion: [],
     fechaModificacion: [],

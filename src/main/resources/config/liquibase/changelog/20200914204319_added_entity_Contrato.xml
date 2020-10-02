@@ -24,6 +24,9 @@
             <column name="fecha_termino_acceso" type="datetime">
                 <constraints nullable="true" />
             </column>
+            <column name="fecha_creacion" type="datetime">
+                <constraints nullable="true" />
+            </column>
             <column name="observaciones_servicio" type="varchar(250)">
                 <constraints nullable="true" />
             </column>
@@ -116,6 +119,7 @@
         <dropDefaultValue tableName="contrato" columnName="fecha_inicio_servicio" columnDataType="datetime"/>
         <dropDefaultValue tableName="contrato" columnName="fecha_termino_servicio" columnDataType="datetime"/>
         <dropDefaultValue tableName="contrato" columnName="fecha_termino_acceso" columnDataType="datetime"/>
+        <dropDefaultValue tableName="contrato" columnName="fecha_creacion" columnDataType="datetime"/>
         <dropDefaultValue tableName="contrato" columnName="fecha_inicio" columnDataType="datetime"/>
         <dropDefaultValue tableName="contrato" columnName="fecha_termino" columnDataType="datetime"/>
     </changeSet>
@@ -142,6 +146,7 @@
             <column name="fecha_inicio_servicio" type="datetime"/>
             <column name="fecha_termino_servicio" type="datetime"/>
             <column name="fecha_termino_acceso" type="datetime"/>
+            <column name="fecha_creacion" type="datetime"/>
             <column name="observaciones_servicio" type="string"/>
             <column name="codigo" type="string"/>
             <column name="nombre" type="string"/>

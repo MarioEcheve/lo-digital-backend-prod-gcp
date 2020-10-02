@@ -56,6 +56,7 @@ export class ContratoService {
         contrato.fechaTerminoServicio && contrato.fechaTerminoServicio.isValid() ? contrato.fechaTerminoServicio.toJSON() : undefined,
       fechaTerminoAcceso:
         contrato.fechaTerminoAcceso && contrato.fechaTerminoAcceso.isValid() ? contrato.fechaTerminoAcceso.toJSON() : undefined,
+      fechaCreacion: contrato.fechaCreacion && contrato.fechaCreacion.isValid() ? contrato.fechaCreacion.toJSON() : undefined,
       fechaInicio: contrato.fechaInicio && contrato.fechaInicio.isValid() ? contrato.fechaInicio.toJSON() : undefined,
       fechaTermino: contrato.fechaTermino && contrato.fechaTermino.isValid() ? contrato.fechaTermino.toJSON() : undefined,
     });
@@ -67,6 +68,7 @@ export class ContratoService {
       res.body.fechaInicioServicio = res.body.fechaInicioServicio ? moment(res.body.fechaInicioServicio) : undefined;
       res.body.fechaTerminoServicio = res.body.fechaTerminoServicio ? moment(res.body.fechaTerminoServicio) : undefined;
       res.body.fechaTerminoAcceso = res.body.fechaTerminoAcceso ? moment(res.body.fechaTerminoAcceso) : undefined;
+      res.body.fechaCreacion = res.body.fechaCreacion ? moment(res.body.fechaCreacion) : undefined;
       res.body.fechaInicio = res.body.fechaInicio ? moment(res.body.fechaInicio) : undefined;
       res.body.fechaTermino = res.body.fechaTermino ? moment(res.body.fechaTermino) : undefined;
     }
@@ -79,6 +81,7 @@ export class ContratoService {
         contrato.fechaInicioServicio = contrato.fechaInicioServicio ? moment(contrato.fechaInicioServicio) : undefined;
         contrato.fechaTerminoServicio = contrato.fechaTerminoServicio ? moment(contrato.fechaTerminoServicio) : undefined;
         contrato.fechaTerminoAcceso = contrato.fechaTerminoAcceso ? moment(contrato.fechaTerminoAcceso) : undefined;
+        contrato.fechaCreacion = contrato.fechaCreacion ? moment(contrato.fechaCreacion) : undefined;
         contrato.fechaInicio = contrato.fechaInicio ? moment(contrato.fechaInicio) : undefined;
         contrato.fechaTermino = contrato.fechaTermino ? moment(contrato.fechaTermino) : undefined;
       });

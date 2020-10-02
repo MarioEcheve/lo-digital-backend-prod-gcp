@@ -72,7 +72,7 @@
         "maxlength",
         "required"
       ],
-      "fieldValidateRulesMaxlength": "80"
+      "fieldValidateRulesMaxlength": "250"
     },
     {
       "fieldName": "anotacion",
@@ -80,7 +80,7 @@
       "fieldValidateRules": [
         "maxlength"
       ],
-      "fieldValidateRulesMaxlength": "9000"
+      "fieldValidateRulesMaxlength": "12000"
     },
     {
       "fieldName": "pdfFirmado",

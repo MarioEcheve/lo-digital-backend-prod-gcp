@@ -48,6 +48,7 @@ export class ContratoUpdateComponent implements OnInit {
     fechaInicioServicio: [],
     fechaTerminoServicio: [],
     fechaTerminoAcceso: [],
+    fechaCreacion: [],
     observacionesServicio: [null, [Validators.maxLength(250)]],
     codigo: [null, [Validators.required, Validators.maxLength(20)]],
     nombre: [null, [Validators.required, Validators.maxLength(60)]],
@@ -100,6 +101,7 @@ export class ContratoUpdateComponent implements OnInit {
         contrato.fechaInicioServicio = today;
         contrato.fechaTerminoServicio = today;
         contrato.fechaTerminoAcceso = today;
+        contrato.fechaCreacion = today;
         contrato.fechaInicio = today;
         contrato.fechaTermino = today;
       }
@@ -130,6 +132,7 @@ export class ContratoUpdateComponent implements OnInit {
       fechaInicioServicio: contrato.fechaInicioServicio ? contrato.fechaInicioServicio.format(DATE_TIME_FORMAT) : null,
       fechaTerminoServicio: contrato.fechaTerminoServicio ? contrato.fechaTerminoServicio.format(DATE_TIME_FORMAT) : null,
       fechaTerminoAcceso: contrato.fechaTerminoAcceso ? contrato.fechaTerminoAcceso.format(DATE_TIME_FORMAT) : null,
+      fechaCreacion: contrato.fechaCreacion ? contrato.fechaCreacion.format(DATE_TIME_FORMAT) : null,
       observacionesServicio: contrato.observacionesServicio,
       codigo: contrato.codigo,
       nombre: contrato.nombre,
@@ -188,6 +191,9 @@ export class ContratoUpdateComponent implements OnInit {
         : undefined,
       fechaTerminoAcceso: this.editForm.get(['fechaTerminoAcceso'])!.value
         ? moment(this.editForm.get(['fechaTerminoAcceso'])!.value, DATE_TIME_FORMAT)
+        : undefined,
+      fechaCreacion: this.editForm.get(['fechaCreacion'])!.value
+        ? moment(this.editForm.get(['fechaCreacion'])!.value, DATE_TIME_FORMAT)
         : undefined,
       observacionesServicio: this.editForm.get(['observacionesServicio'])!.value,
       codigo: this.editForm.get(['codigo'])!.value,

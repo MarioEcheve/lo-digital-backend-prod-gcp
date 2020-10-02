@@ -30,6 +30,36 @@
             <column name="fecha_modificacion" type="datetime">
                 <constraints nullable="true" />
             </column>
+            <column name="nombre_contacto_comercial" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cargo_contacto_comercial" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="telefono_principal_contacto_comercial" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="telefono_secundario_contacto_comercial" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="email_contacto_comercial" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nombre_contacto_tecnico" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cargo_contacto_tecnico" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="telefono_principal_contacto_tecnico" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="telefono_secundario_contacto_tecnico" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="email_contacto_tecnico" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="entidad_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -69,6 +99,16 @@
             <column name="descripcion" type="string"/>
             <column name="fecha_creacion" type="datetime"/>
             <column name="fecha_modificacion" type="datetime"/>
+            <column name="nombre_contacto_comercial" type="string"/>
+            <column name="cargo_contacto_comercial" type="string"/>
+            <column name="telefono_principal_contacto_comercial" type="string"/>
+            <column name="telefono_secundario_contacto_comercial" type="string"/>
+            <column name="email_contacto_comercial" type="string"/>
+            <column name="nombre_contacto_tecnico" type="string"/>
+            <column name="cargo_contacto_tecnico" type="string"/>
+            <column name="telefono_principal_contacto_tecnico" type="string"/>
+            <column name="telefono_secundario_contacto_tecnico" type="string"/>
+            <column name="email_contacto_tecnico" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

@@ -42,6 +42,36 @@ public class Dependencia implements Serializable {
     @Column(name = "fecha_modificacion")
     private Instant fechaModificacion;
 
+    @Column(name = "nombre_contacto_comercial")
+    private String nombreContactoComercial;
+
+    @Column(name = "cargo_contacto_comercial")
+    private String cargoContactoComercial;
+
+    @Column(name = "telefono_principal_contacto_comercial")
+    private String telefonoPrincipalContactoComercial;
+
+    @Column(name = "telefono_secundario_contacto_comercial")
+    private String telefonoSecundarioContactoComercial;
+
+    @Column(name = "email_contacto_comercial")
+    private String emailContactoComercial;
+
+    @Column(name = "nombre_contacto_tecnico")
+    private String nombreContactoTecnico;
+
+    @Column(name = "cargo_contacto_tecnico")
+    private String cargoContactoTecnico;
+
+    @Column(name = "telefono_principal_contacto_tecnico")
+    private String telefonoPrincipalContactoTecnico;
+
+    @Column(name = "telefono_secundario_contacto_tecnico")
+    private String telefonoSecundarioContactoTecnico;
+
+    @Column(name = "email_contacto_tecnico")
+    private String emailContactoTecnico;
+
     @OneToMany(mappedBy = "dependencia")
     private Set<UsuarioDependencia> usuarioDependencias = new HashSet<>();
 
@@ -132,6 +162,136 @@ public class Dependencia implements Serializable {
 
     public void setFechaModificacion(Instant fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
+    }
+
+    public String getNombreContactoComercial() {
+        return nombreContactoComercial;
+    }
+
+    public Dependencia nombreContactoComercial(String nombreContactoComercial) {
+        this.nombreContactoComercial = nombreContactoComercial;
+        return this;
+    }
+
+    public void setNombreContactoComercial(String nombreContactoComercial) {
+        this.nombreContactoComercial = nombreContactoComercial;
+    }
+
+    public String getCargoContactoComercial() {
+        return cargoContactoComercial;
+    }
+
+    public Dependencia cargoContactoComercial(String cargoContactoComercial) {
+        this.cargoContactoComercial = cargoContactoComercial;
+        return this;
+    }
+
+    public void setCargoContactoComercial(String cargoContactoComercial) {
+        this.cargoContactoComercial = cargoContactoComercial;
+    }
+
+    public String getTelefonoPrincipalContactoComercial() {
+        return telefonoPrincipalContactoComercial;
+    }
+
+    public Dependencia telefonoPrincipalContactoComercial(String telefonoPrincipalContactoComercial) {
+        this.telefonoPrincipalContactoComercial = telefonoPrincipalContactoComercial;
+        return this;
+    }
+
+    public void setTelefonoPrincipalContactoComercial(String telefonoPrincipalContactoComercial) {
+        this.telefonoPrincipalContactoComercial = telefonoPrincipalContactoComercial;
+    }
+
+    public String getTelefonoSecundarioContactoComercial() {
+        return telefonoSecundarioContactoComercial;
+    }
+
+    public Dependencia telefonoSecundarioContactoComercial(String telefonoSecundarioContactoComercial) {
+        this.telefonoSecundarioContactoComercial = telefonoSecundarioContactoComercial;
+        return this;
+    }
+
+    public void setTelefonoSecundarioContactoComercial(String telefonoSecundarioContactoComercial) {
+        this.telefonoSecundarioContactoComercial = telefonoSecundarioContactoComercial;
+    }
+
+    public String getEmailContactoComercial() {
+        return emailContactoComercial;
+    }
+
+    public Dependencia emailContactoComercial(String emailContactoComercial) {
+        this.emailContactoComercial = emailContactoComercial;
+        return this;
+    }
+
+    public void setEmailContactoComercial(String emailContactoComercial) {
+        this.emailContactoComercial = emailContactoComercial;
+    }
+
+    public String getNombreContactoTecnico() {
+        return nombreContactoTecnico;
+    }
+
+    public Dependencia nombreContactoTecnico(String nombreContactoTecnico) {
+        this.nombreContactoTecnico = nombreContactoTecnico;
+        return this;
+    }
+
+    public void setNombreContactoTecnico(String nombreContactoTecnico) {
+        this.nombreContactoTecnico = nombreContactoTecnico;
+    }
+
+    public String getCargoContactoTecnico() {
+        return cargoContactoTecnico;
+    }
+
+    public Dependencia cargoContactoTecnico(String cargoContactoTecnico) {
+        this.cargoContactoTecnico = cargoContactoTecnico;
+        return this;
+    }
+
+    public void setCargoContactoTecnico(String cargoContactoTecnico) {
+        this.cargoContactoTecnico = cargoContactoTecnico;
+    }
+
+    public String getTelefonoPrincipalContactoTecnico() {
+        return telefonoPrincipalContactoTecnico;
+    }
+
+    public Dependencia telefonoPrincipalContactoTecnico(String telefonoPrincipalContactoTecnico) {
+        this.telefonoPrincipalContactoTecnico = telefonoPrincipalContactoTecnico;
+        return this;
+    }
+
+    public void setTelefonoPrincipalContactoTecnico(String telefonoPrincipalContactoTecnico) {
+        this.telefonoPrincipalContactoTecnico = telefonoPrincipalContactoTecnico;
+    }
+
+    public String getTelefonoSecundarioContactoTecnico() {
+        return telefonoSecundarioContactoTecnico;
+    }
+
+    public Dependencia telefonoSecundarioContactoTecnico(String telefonoSecundarioContactoTecnico) {
+        this.telefonoSecundarioContactoTecnico = telefonoSecundarioContactoTecnico;
+        return this;
+    }
+
+    public void setTelefonoSecundarioContactoTecnico(String telefonoSecundarioContactoTecnico) {
+        this.telefonoSecundarioContactoTecnico = telefonoSecundarioContactoTecnico;
+    }
+
+    public String getEmailContactoTecnico() {
+        return emailContactoTecnico;
+    }
+
+    public Dependencia emailContactoTecnico(String emailContactoTecnico) {
+        this.emailContactoTecnico = emailContactoTecnico;
+        return this;
+    }
+
+    public void setEmailContactoTecnico(String emailContactoTecnico) {
+        this.emailContactoTecnico = emailContactoTecnico;
     }
 
     public Set<UsuarioDependencia> getUsuarioDependencias() {
@@ -250,6 +410,16 @@ public class Dependencia implements Serializable {
             ", descripcion='" + getDescripcion() + "'" +
             ", fechaCreacion='" + getFechaCreacion() + "'" +
             ", fechaModificacion='" + getFechaModificacion() + "'" +
+            ", nombreContactoComercial='" + getNombreContactoComercial() + "'" +
+            ", cargoContactoComercial='" + getCargoContactoComercial() + "'" +
+            ", telefonoPrincipalContactoComercial='" + getTelefonoPrincipalContactoComercial() + "'" +
+            ", telefonoSecundarioContactoComercial='" + getTelefonoSecundarioContactoComercial() + "'" +
+            ", emailContactoComercial='" + getEmailContactoComercial() + "'" +
+            ", nombreContactoTecnico='" + getNombreContactoTecnico() + "'" +
+            ", cargoContactoTecnico='" + getCargoContactoTecnico() + "'" +
+            ", telefonoPrincipalContactoTecnico='" + getTelefonoPrincipalContactoTecnico() + "'" +
+            ", telefonoSecundarioContactoTecnico='" + getTelefonoSecundarioContactoTecnico() + "'" +
+            ", emailContactoTecnico='" + getEmailContactoTecnico() + "'" +
             "}";
     }
 }

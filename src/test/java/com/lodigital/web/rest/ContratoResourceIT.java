@@ -40,6 +40,9 @@ public class ContratoResourceIT {
     private static final Instant DEFAULT_FECHA_TERMINO_ACCESO = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_FECHA_TERMINO_ACCESO = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
+    private static final Instant DEFAULT_FECHA_CREACION = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_FECHA_CREACION = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+
     private static final String DEFAULT_OBSERVACIONES_SERVICIO = "AAAAAAAAAA";
     private static final String UPDATED_OBSERVACIONES_SERVICIO = "BBBBBBBBBB";
 
@@ -125,6 +128,7 @@ public class ContratoResourceIT {
             .fechaInicioServicio(DEFAULT_FECHA_INICIO_SERVICIO)
             .fechaTerminoServicio(DEFAULT_FECHA_TERMINO_SERVICIO)
             .fechaTerminoAcceso(DEFAULT_FECHA_TERMINO_ACCESO)
+            .fechaCreacion(DEFAULT_FECHA_CREACION)
             .observacionesServicio(DEFAULT_OBSERVACIONES_SERVICIO)
             .codigo(DEFAULT_CODIGO)
             .nombre(DEFAULT_NOMBRE)
@@ -159,6 +163,7 @@ public class ContratoResourceIT {
             .fechaInicioServicio(UPDATED_FECHA_INICIO_SERVICIO)
             .fechaTerminoServicio(UPDATED_FECHA_TERMINO_SERVICIO)
             .fechaTerminoAcceso(UPDATED_FECHA_TERMINO_ACCESO)
+            .fechaCreacion(UPDATED_FECHA_CREACION)
             .observacionesServicio(UPDATED_OBSERVACIONES_SERVICIO)
             .codigo(UPDATED_CODIGO)
             .nombre(UPDATED_NOMBRE)
@@ -205,6 +210,7 @@ public class ContratoResourceIT {
         assertThat(testContrato.getFechaInicioServicio()).isEqualTo(DEFAULT_FECHA_INICIO_SERVICIO);
         assertThat(testContrato.getFechaTerminoServicio()).isEqualTo(DEFAULT_FECHA_TERMINO_SERVICIO);
         assertThat(testContrato.getFechaTerminoAcceso()).isEqualTo(DEFAULT_FECHA_TERMINO_ACCESO);
+        assertThat(testContrato.getFechaCreacion()).isEqualTo(DEFAULT_FECHA_CREACION);
         assertThat(testContrato.getObservacionesServicio()).isEqualTo(DEFAULT_OBSERVACIONES_SERVICIO);
         assertThat(testContrato.getCodigo()).isEqualTo(DEFAULT_CODIGO);
         assertThat(testContrato.getNombre()).isEqualTo(DEFAULT_NOMBRE);
@@ -319,6 +325,7 @@ public class ContratoResourceIT {
             .andExpect(jsonPath("$.[*].fechaInicioServicio").value(hasItem(DEFAULT_FECHA_INICIO_SERVICIO.toString())))
             .andExpect(jsonPath("$.[*].fechaTerminoServicio").value(hasItem(DEFAULT_FECHA_TERMINO_SERVICIO.toString())))
             .andExpect(jsonPath("$.[*].fechaTerminoAcceso").value(hasItem(DEFAULT_FECHA_TERMINO_ACCESO.toString())))
+            .andExpect(jsonPath("$.[*].fechaCreacion").value(hasItem(DEFAULT_FECHA_CREACION.toString())))
             .andExpect(jsonPath("$.[*].observacionesServicio").value(hasItem(DEFAULT_OBSERVACIONES_SERVICIO)))
             .andExpect(jsonPath("$.[*].codigo").value(hasItem(DEFAULT_CODIGO)))
             .andExpect(jsonPath("$.[*].nombre").value(hasItem(DEFAULT_NOMBRE)))
@@ -356,6 +363,7 @@ public class ContratoResourceIT {
             .andExpect(jsonPath("$.fechaInicioServicio").value(DEFAULT_FECHA_INICIO_SERVICIO.toString()))
             .andExpect(jsonPath("$.fechaTerminoServicio").value(DEFAULT_FECHA_TERMINO_SERVICIO.toString()))
             .andExpect(jsonPath("$.fechaTerminoAcceso").value(DEFAULT_FECHA_TERMINO_ACCESO.toString()))
+            .andExpect(jsonPath("$.fechaCreacion").value(DEFAULT_FECHA_CREACION.toString()))
             .andExpect(jsonPath("$.observacionesServicio").value(DEFAULT_OBSERVACIONES_SERVICIO))
             .andExpect(jsonPath("$.codigo").value(DEFAULT_CODIGO))
             .andExpect(jsonPath("$.nombre").value(DEFAULT_NOMBRE))
@@ -402,6 +410,7 @@ public class ContratoResourceIT {
             .fechaInicioServicio(UPDATED_FECHA_INICIO_SERVICIO)
             .fechaTerminoServicio(UPDATED_FECHA_TERMINO_SERVICIO)
             .fechaTerminoAcceso(UPDATED_FECHA_TERMINO_ACCESO)
+            .fechaCreacion(UPDATED_FECHA_CREACION)
             .observacionesServicio(UPDATED_OBSERVACIONES_SERVICIO)
             .codigo(UPDATED_CODIGO)
             .nombre(UPDATED_NOMBRE)
@@ -436,6 +445,7 @@ public class ContratoResourceIT {
         assertThat(testContrato.getFechaInicioServicio()).isEqualTo(UPDATED_FECHA_INICIO_SERVICIO);
         assertThat(testContrato.getFechaTerminoServicio()).isEqualTo(UPDATED_FECHA_TERMINO_SERVICIO);
         assertThat(testContrato.getFechaTerminoAcceso()).isEqualTo(UPDATED_FECHA_TERMINO_ACCESO);
+        assertThat(testContrato.getFechaCreacion()).isEqualTo(UPDATED_FECHA_CREACION);
         assertThat(testContrato.getObservacionesServicio()).isEqualTo(UPDATED_OBSERVACIONES_SERVICIO);
         assertThat(testContrato.getCodigo()).isEqualTo(UPDATED_CODIGO);
         assertThat(testContrato.getNombre()).isEqualTo(UPDATED_NOMBRE);

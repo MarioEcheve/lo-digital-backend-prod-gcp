@@ -14,6 +14,7 @@ export interface IContrato {
   fechaInicioServicio?: Moment;
   fechaTerminoServicio?: Moment;
   fechaTerminoAcceso?: Moment;
+  fechaCreacion?: Moment;
   observacionesServicio?: string;
   codigo?: string;
   nombre?: string;
@@ -52,6 +53,7 @@ export class Contrato implements IContrato {
     public fechaInicioServicio?: Moment,
     public fechaTerminoServicio?: Moment,
     public fechaTerminoAcceso?: Moment,
+    public fechaCreacion?: Moment,
     public observacionesServicio?: string,
     public codigo?: string,
     public nombre?: string,

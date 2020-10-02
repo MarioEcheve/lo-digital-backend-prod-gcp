@@ -45,7 +45,7 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/lodigital
+    url: jdbc:postgresql://localhost:5432/lodigital_test
     username: fvilches
     password: 292403
     hikari:
@@ -58,10 +58,12 @@ spring:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev
   mail:
-    host: localhost
-    port: 25
-    username:
-    password:
+    host: mail.lodigital.cl
+    port: 465
+    username: aviso@lodigital.cl
+    password: epsilon2020
+    properties:
+      mail.smtp.ssl.enable: true
   messages:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:

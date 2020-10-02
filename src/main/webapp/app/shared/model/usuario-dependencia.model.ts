@@ -11,6 +11,8 @@ export interface IUsuarioDependencia {
   fechaCreacion?: Moment;
   fechaModificacion?: Moment;
   estado?: boolean;
+  fechaActivacion?: Moment;
+  fechaDesactivacion?: Moment;
   usuarioLibros?: IUsuarioLibro[];
   usuario?: IUser;
   dependencia?: IDependencia;
@@ -25,6 +27,8 @@ export class UsuarioDependencia implements IUsuarioDependencia {
     public fechaCreacion?: Moment,
     public fechaModificacion?: Moment,
     public estado?: boolean,
+    public fechaActivacion?: Moment,
+    public fechaDesactivacion?: Moment,
     public usuarioLibros?: IUsuarioLibro[],
     public usuario?: IUser,
     public dependencia?: IDependencia,

@@ -28,6 +28,16 @@
                     <th scope="col" ><span>Descripcion</span></th>
                     <th scope="col" ><span>Fecha Creacion</span></th>
                     <th scope="col" ><span>Fecha Modificacion</span></th>
+                    <th scope="col" ><span>Nombre Contacto Comercial</span></th>
+                    <th scope="col" ><span>Cargo Contacto Comercial</span></th>
+                    <th scope="col" ><span>Telefono Principal Contacto Comercial</span></th>
+                    <th scope="col" ><span>Telefono Secundario Contacto Comercial</span></th>
+                    <th scope="col" ><span>Email Contacto Comercial</span></th>
+                    <th scope="col" ><span>Nombre Contacto Tecnico</span></th>
+                    <th scope="col" ><span>Cargo Contacto Tecnico</span></th>
+                    <th scope="col" ><span>Telefono Principal Contacto Tecnico</span></th>
+                    <th scope="col" ><span>Telefono Secundario Contacto Tecnico</span></th>
+                    <th scope="col" ><span>Email Contacto Tecnico</span></th>
                     <th scope="col" ><span>Entidad</span></th>
                     <th scope="col" ><span>Region</span></th>
                     <th scope="col" ><span>Comuna</span></th>
@@ -42,6 +52,16 @@
                     <td>{{ dependencia.descripcion }}</td>
                     <td>{{ dependencia.fechaCreacion | date:'medium' }}</td>
                     <td>{{ dependencia.fechaModificacion | date:'medium' }}</td>
+                    <td>{{ dependencia.nombreContactoComercial }}</td>
+                    <td>{{ dependencia.cargoContactoComercial }}</td>
+                    <td>{{ dependencia.telefonoPrincipalContactoComercial }}</td>
+                    <td>{{ dependencia.telefonoSecundarioContactoComercial }}</td>
+                    <td>{{ dependencia.emailContactoComercial }}</td>
+                    <td>{{ dependencia.nombreContactoTecnico }}</td>
+                    <td>{{ dependencia.cargoContactoTecnico }}</td>
+                    <td>{{ dependencia.telefonoPrincipalContactoTecnico }}</td>
+                    <td>{{ dependencia.telefonoSecundarioContactoTecnico }}</td>
+                    <td>{{ dependencia.emailContactoTecnico }}</td>
                     <td>
                         <div *ngIf="dependencia.entidad">
                             <a [routerLink]="['/entidad', dependencia.entidad?.id, 'view']" >{{ dependencia.entidad?.nombre }}</a>

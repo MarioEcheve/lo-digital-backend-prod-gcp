@@ -73,12 +73,12 @@ public class Folio implements Serializable {
     private Instant fechaLectura;
 
     @NotNull
-    @Size(max = 80)
-    @Column(name = "asunto", length = 80, nullable = false)
+    @Size(max = 250)
+    @Column(name = "asunto", length = 250, nullable = false)
     private String asunto;
 
-    @Size(max = 9000)
-    @Column(name = "anotacion", length = 9000)
+    @Size(max = 12000)
+    @Column(name = "anotacion", length = 12000)
     private String anotacion;
 
     @Lob

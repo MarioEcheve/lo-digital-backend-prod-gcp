@@ -29,8 +29,8 @@ public class Archivo implements Serializable {
     @Column(name = "archivo_content_type", nullable = false)
     private String archivoContentType;
 
-    @Size(max = 100)
-    @Column(name = "descripcion", length = 100)
+    @Size(max = 500)
+    @Column(name = "descripcion", length = 500)
     private String descripcion;
 
     @NotNull

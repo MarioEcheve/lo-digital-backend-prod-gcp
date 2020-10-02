@@ -1,11 +1,11 @@
-id;nombre;direccion;descripcion;fecha_creacion;fecha_modificacion
-1;Investor;Rhode Island;Costa Rica grid-enabled silver;2020-09-14T12:56:33;2020-09-14T17:21:44
-2;digital Turkish Lira;Sleek Granite Computer paradigms;initiatives;2020-09-14T01:01:39;2020-09-14T15:49:25
-3;Indiana;engineer;web-readiness optical;2020-09-14T16:22:48;2020-09-14T09:56:41
-4;Kuwait Guinea;Cambridgeshire Internal leading-edge;ADP;2020-09-14T18:41:23;2020-09-14T15:41:35
-5;Oregon;Assistant;bottom-line copying Berkshire;2020-09-14T13:16:24;2020-09-14T01:45:48
-6;Concrete;Sleek Plastic Shoes Handmade Plastic Pizza;Research standardization Arizona;2020-09-14T15:37:00;2020-09-14T03:38:48
-7;Intranet;Pula Practical Cotton Chips;Credit Card Account;2020-09-14T11:36:07;2020-09-14T11:31:17
-8;withdrawal parsing;deposit projection redundant;scale Soft matrix;2020-09-14T13:19:03;2020-09-14T17:07:14
-9;Usability Brand;plug-and-play Turnpike;Investor Pennsylvania SQL;2020-09-13T21:58:51;2020-09-14T02:08:39
-10;User-centric Program support;payment sensor Aruban Guilder;Generic Steel Computer solutions knowledge user;2020-09-14T00:24:23;2020-09-13T23:55:57
+id;nombre;direccion;descripcion;fecha_creacion;fecha_modificacion;nombre_contacto_comercial;cargo_contacto_comercial;telefono_principal_contacto_comercial;telefono_secundario_contacto_comercial;email_contacto_comercial;nombre_contacto_tecnico;cargo_contacto_tecnico;telefono_principal_contacto_tecnico;telefono_secundario_contacto_tecnico;email_contacto_tecnico
+1;Investor;Rhode Island;Costa Rica grid-enabled silver;2020-09-14T12:56:33;2020-09-14T17:21:44;digital Turkish Lira;Sleek Granite Computer paradigms;initiatives;purple Indiana function;Land Jewelery hacking;real-time Mountain;Optimization JSON;leading-edge Pizza markets;Toys;Virtual programming bottom-line
+2;instruction set B2C back-end;turquoise;Bedfordshire;2020-09-14T09:17:25;2020-09-14T19:44:18;standardization capacitor Plastic;Arizona magenta Industrial;cross-media Steel;redefine migration;seize Niger generate;Investor orange neural;interface hack;matrix capability matrix;Brand Louisiana Applications;Interactions New Jersey program
+3;Accounts;User-centric Program support;payment sensor Aruban Guilder;2020-09-13T23:21:37;2020-09-14T19:05:05;Ergonomic solutions;Sudan;Frozen Idaho utilisation;array Centers;reboot magenta;Avon;Central;hard drive Tools;deliver;quantify EXE
+4;Assurance;Central bricks-and-clicks;Michigan;2020-09-14T00:54:17;2020-09-14T08:36:18;synthesizing Borders Director;program e-commerce;Ergonomic Metal Shoes clicks-and-mortar;application;Movies secondary;Granite invoice Plastic;Botswana;Senior;scalable index;Summit Kansas
+5;Wooden Technician;Kids virtual;Handcrafted Metal Chips Armenian Dram Function-based;2020-09-14T01:35:36;2020-09-14T17:11:36;Cape Concrete;Executive Tasty Wooden Sausages;lavender niches;Alabama Forges Home;XML background;Sports;Outdoors scalable action-items;Assistant;bi-directional orchid Savings Account;Chilean Peso Unidades de fomento Liaison
+6;Configurable;incremental Personal Loan Account;Refined;2020-09-14T03:29:06;2020-09-14T09:13:29;Generic Fresh Mouse Optimization User-centric;primary zero tolerance distributed;bleeding-edge;program;payment Officer success;Saint Helena Pound;District turquoise Investor;hard drive Hill Steel;haptic open-source portal;Avon
+7;orange connect;withdrawal National Handmade Frozen Car;azure quantifying structure;2020-09-14T08:21:17;2020-09-14T07:55:04;sky blue Serbia;Peso Uruguayo Uruguay Peso en Unidades Indexadas neural-net cross-platform;scale hard drive;grey Bhutan;Reverse-engineered;Ergonomic Shoes Gloves;SSL copying 24/365;wireless;Steel;Colorado matrix
+8;AI wireless;Bacon recontextualize back up;Checking Account;2020-09-13T21:42:55;2020-09-14T08:40:00;sticky;pink Focused;user-centric frame;instruction set Architect;plum Philippines Home Loan Account;Gloves;Ergonomic Manager;primary USB;New York New York;Cloned bypass
+9;Fresh JBOD Pike;International;bricks-and-clicks;2020-09-14T11:26:47;2020-09-14T01:44:00;maximize feed Motorway;collaboration;Iowa backing up;Synergized customized Yen;driver Steel Frozen;Developer Markets Ergonomic Cotton Bike;deposit;Outdoors payment;Rustic Wooden Pants Tasty;deploy
+10;Visionary;Lithuanian Litas deposit back up;expedite;2020-09-14T12:11:12;2020-09-14T12:42:13;Investor Bedfordshire Sleek;Enterprise-wide Avon Electronics;Realigned invoice;niches navigate;Oklahoma;Jamaican Dollar Small Fresh Computer;Computers protocol;demand-driven capacity;Frozen Credit Card Account;Home Loan Account

@@ -28,6 +28,8 @@
                     <th scope="col" ><span>Fecha Creacion</span></th>
                     <th scope="col" ><span>Fecha Modificacion</span></th>
                     <th scope="col" ><span>Estado</span></th>
+                    <th scope="col" ><span>Fecha Activacion</span></th>
+                    <th scope="col" ><span>Fecha Desactivacion</span></th>
                     <th scope="col" ><span>Usuario</span></th>
                     <th scope="col" ><span>Dependencia</span></th>
                     <th scope="col" ><span>Perfil Usuario Dependencia</span></th>
@@ -42,6 +44,8 @@
                     <td>{{ usuarioDependencia.fechaCreacion | date:'medium' }}</td>
                     <td>{{ usuarioDependencia.fechaModificacion | date:'medium' }}</td>
                     <td>{{ usuarioDependencia.estado }}</td>
+                    <td>{{ usuarioDependencia.fechaActivacion | date:'medium' }}</td>
+                    <td>{{ usuarioDependencia.fechaDesactivacion | date:'medium' }}</td>
                     <td>
                         {{ usuarioDependencia.usuario?.login }}
                     </td>

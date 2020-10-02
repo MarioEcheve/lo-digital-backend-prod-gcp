@@ -58,6 +58,14 @@ export class UsuarioDependenciaService {
         usuarioDependencia.fechaModificacion && usuarioDependencia.fechaModificacion.isValid()
           ? usuarioDependencia.fechaModificacion.toJSON()
           : undefined,
+      fechaActivacion:
+        usuarioDependencia.fechaActivacion && usuarioDependencia.fechaActivacion.isValid()
+          ? usuarioDependencia.fechaActivacion.toJSON()
+          : undefined,
+      fechaDesactivacion:
+        usuarioDependencia.fechaDesactivacion && usuarioDependencia.fechaDesactivacion.isValid()
+          ? usuarioDependencia.fechaDesactivacion.toJSON()
+          : undefined,
     });
     return copy;
   }
@@ -66,6 +74,8 @@ export class UsuarioDependenciaService {
     if (res.body) {
       res.body.fechaCreacion = res.body.fechaCreacion ? moment(res.body.fechaCreacion) : undefined;
       res.body.fechaModificacion = res.body.fechaModificacion ? moment(res.body.fechaModificacion) : undefined;
+      res.body.fechaActivacion = res.body.fechaActivacion ? moment(res.body.fechaActivacion) : undefined;
+      res.body.fechaDesactivacion = res.body.fechaDesactivacion ? moment(res.body.fechaDesactivacion) : undefined;
     }
     return res;
   }
@@ -76,6 +86,10 @@ export class UsuarioDependenciaService {
         usuarioDependencia.fechaCreacion = usuarioDependencia.fechaCreacion ? moment(usuarioDependencia.fechaCreacion) : undefined;
         usuarioDependencia.fechaModificacion = usuarioDependencia.fechaModificacion
           ? moment(usuarioDependencia.fechaModificacion)
+          : undefined;
+        usuarioDependencia.fechaActivacion = usuarioDependencia.fechaActivacion ? moment(usuarioDependencia.fechaActivacion) : undefined;
+        usuarioDependencia.fechaDesactivacion = usuarioDependencia.fechaDesactivacion
+          ? moment(usuarioDependencia.fechaDesactivacion)
           : undefined;
       });
     }

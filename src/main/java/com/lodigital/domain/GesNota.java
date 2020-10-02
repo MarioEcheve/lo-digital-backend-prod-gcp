@@ -23,8 +23,8 @@ public class GesNota implements Serializable {
     private Long id;
 
     @NotNull
-    @Size(max = 100)
-    @Column(name = "nota", length = 100, nullable = false)
+    @Size(max = 500)
+    @Column(name = "nota", length = 500, nullable = false)
     private String nota;
 
     @Column(name = "fecha_creacion")

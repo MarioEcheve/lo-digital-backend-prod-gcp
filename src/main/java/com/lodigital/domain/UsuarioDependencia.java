@@ -38,6 +38,12 @@ public class UsuarioDependencia implements Serializable {
     @Column(name = "estado")
     private Boolean estado;
 
+    @Column(name = "fecha_activacion")
+    private Instant fechaActivacion;
+
+    @Column(name = "fecha_desactivacion")
+    private Instant fechaDesactivacion;
+
     @OneToMany(mappedBy = "usuarioDependencia")
     private Set<UsuarioLibro> usuarioLibros = new HashSet<>();
 
@@ -125,6 +131,32 @@ public class UsuarioDependencia implements Serializable {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Instant getFechaActivacion() {
+        return fechaActivacion;
+    }
+
+    public UsuarioDependencia fechaActivacion(Instant fechaActivacion) {
+        this.fechaActivacion = fechaActivacion;
+        return this;
+    }
+
+    public void setFechaActivacion(Instant fechaActivacion) {
+        this.fechaActivacion = fechaActivacion;
+    }
+
+    public Instant getFechaDesactivacion() {
+        return fechaDesactivacion;
+    }
+
+    public UsuarioDependencia fechaDesactivacion(Instant fechaDesactivacion) {
+        this.fechaDesactivacion = fechaDesactivacion;
+        return this;
+    }
+
+    public void setFechaDesactivacion(Instant fechaDesactivacion) {
+        this.fechaDesactivacion = fechaDesactivacion;
     }
 
     public Set<UsuarioLibro> getUsuarioLibros() {
@@ -218,6 +250,8 @@ public class UsuarioDependencia implements Serializable {
             ", fechaCreacion='" + getFechaCreacion() + "'" +
             ", fechaModificacion='" + getFechaModificacion() + "'" +
             ", estado='" + isEstado() + "'" +
+            ", fechaActivacion='" + getFechaActivacion() + "'" +
+            ", fechaDesactivacion='" + getFechaDesactivacion() + "'" +
             "}";
     }
 }

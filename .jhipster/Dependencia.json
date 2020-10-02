@@ -32,6 +32,46 @@
     {
       "fieldName": "fechaModificacion",
       "fieldType": "Instant"
+    },
+    {
+      "fieldName": "nombreContactoComercial",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cargoContactoComercial",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefonoPrincipalContactoComercial",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefonoSecundarioContactoComercial",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emailContactoComercial",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nombreContactoTecnico",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cargoContactoTecnico",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefonoPrincipalContactoTecnico",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefonoSecundarioContactoTecnico",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emailContactoTecnico",
+      "fieldType": "String"
     }
   ],
   "relationships": [

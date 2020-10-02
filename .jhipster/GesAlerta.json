@@ -8,7 +8,7 @@
         "maxlength",
         "required"
       ],
-      "fieldValidateRulesMaxlength": "100"
+      "fieldValidateRulesMaxlength": "500"
     },
     {
       "fieldName": "fechaAlerta",

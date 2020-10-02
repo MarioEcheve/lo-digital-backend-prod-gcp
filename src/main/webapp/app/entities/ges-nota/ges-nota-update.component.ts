@@ -27,7 +27,7 @@ export class GesNotaUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    nota: [null, [Validators.required, Validators.maxLength(100)]],
+    nota: [null, [Validators.required, Validators.maxLength(500)]],
     fechaCreacion: [],
     fechaModificacion: [],
     folio: [],

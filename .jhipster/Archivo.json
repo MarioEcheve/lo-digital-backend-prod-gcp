@@ -15,7 +15,7 @@
       "fieldValidateRules": [
         "maxlength"
       ],
-      "fieldValidateRulesMaxlength": "100"
+      "fieldValidateRulesMaxlength": "500"
     },
     {
       "fieldName": "size",

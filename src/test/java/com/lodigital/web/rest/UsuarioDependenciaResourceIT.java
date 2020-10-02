@@ -46,6 +46,12 @@ public class UsuarioDependenciaResourceIT {
     private static final Boolean DEFAULT_ESTADO = false;
     private static final Boolean UPDATED_ESTADO = true;
 
+    private static final Instant DEFAULT_FECHA_ACTIVACION = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_FECHA_ACTIVACION = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+
+    private static final Instant DEFAULT_FECHA_DESACTIVACION = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_FECHA_DESACTIVACION = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+
     @Autowired
     private UsuarioDependenciaRepository usuarioDependenciaRepository;
 
@@ -69,7 +75,9 @@ public class UsuarioDependenciaResourceIT {
             .rut(DEFAULT_RUT)
             .fechaCreacion(DEFAULT_FECHA_CREACION)
             .fechaModificacion(DEFAULT_FECHA_MODIFICACION)
-            .estado(DEFAULT_ESTADO);
+            .estado(DEFAULT_ESTADO)
+            .fechaActivacion(DEFAULT_FECHA_ACTIVACION)
+            .fechaDesactivacion(DEFAULT_FECHA_DESACTIVACION);
         return usuarioDependencia;
     }
     /**
@@ -84,7 +92,9 @@ public class UsuarioDependenciaResourceIT {
             .rut(UPDATED_RUT)
             .fechaCreacion(UPDATED_FECHA_CREACION)
             .fechaModificacion(UPDATED_FECHA_MODIFICACION)
-            .estado(UPDATED_ESTADO);
+            .estado(UPDATED_ESTADO)
+            .fechaActivacion(UPDATED_FECHA_ACTIVACION)
+            .fechaDesactivacion(UPDATED_FECHA_DESACTIVACION);
         return usuarioDependencia;
     }
 
@@ -112,6 +122,8 @@ public class UsuarioDependenciaResourceIT {
         assertThat(testUsuarioDependencia.getFechaCreacion()).isEqualTo(DEFAULT_FECHA_CREACION);
         assertThat(testUsuarioDependencia.getFechaModificacion()).isEqualTo(DEFAULT_FECHA_MODIFICACION);
         assertThat(testUsuarioDependencia.isEstado()).isEqualTo(DEFAULT_ESTADO);
+        assertThat(testUsuarioDependencia.getFechaActivacion()).isEqualTo(DEFAULT_FECHA_ACTIVACION);
+        assertThat(testUsuarioDependencia.getFechaDesactivacion()).isEqualTo(DEFAULT_FECHA_DESACTIVACION);
     }
 
     @Test
@@ -149,7 +161,9 @@ public class UsuarioDependenciaResourceIT {
             .andExpect(jsonPath("$.[*].rut").value(hasItem(DEFAULT_RUT)))
             .andExpect(jsonPath("$.[*].fechaCreacion").value(hasItem(DEFAULT_FECHA_CREACION.toString())))
             .andExpect(jsonPath("$.[*].fechaModificacion").value(hasItem(DEFAULT_FECHA_MODIFICACION.toString())))
-            .andExpect(jsonPath("$.[*].estado").value(hasItem(DEFAULT_ESTADO.booleanValue())));
+            .andExpect(jsonPath("$.[*].estado").value(hasItem(DEFAULT_ESTADO.booleanValue())))
+            .andExpect(jsonPath("$.[*].fechaActivacion").value(hasItem(DEFAULT_FECHA_ACTIVACION.toString())))
+            .andExpect(jsonPath("$.[*].fechaDesactivacion").value(hasItem(DEFAULT_FECHA_DESACTIVACION.toString())));
     }
     
     @Test
@@ -167,7 +181,9 @@ public class UsuarioDependenciaResourceIT {
             .andExpect(jsonPath("$.rut").value(DEFAULT_RUT))
             .andExpect(jsonPath("$.fechaCreacion").value(DEFAULT_FECHA_CREACION.toString()))
             .andExpect(jsonPath("$.fechaModificacion").value(DEFAULT_FECHA_MODIFICACION.toString()))
-            .andExpect(jsonPath("$.estado").value(DEFAULT_ESTADO.booleanValue()));
+            .andExpect(jsonPath("$.estado").value(DEFAULT_ESTADO.booleanValue()))
+            .andExpect(jsonPath("$.fechaActivacion").value(DEFAULT_FECHA_ACTIVACION.toString()))
+            .andExpect(jsonPath("$.fechaDesactivacion").value(DEFAULT_FECHA_DESACTIVACION.toString()));
     }
     @Test
     @Transactional
@@ -194,7 +210,9 @@ public class UsuarioDependenciaResourceIT {
             .rut(UPDATED_RUT)
             .fechaCreacion(UPDATED_FECHA_CREACION)
             .fechaModificacion(UPDATED_FECHA_MODIFICACION)
-            .estado(UPDATED_ESTADO);
+            .estado(UPDATED_ESTADO)
+            .fechaActivacion(UPDATED_FECHA_ACTIVACION)
+            .fechaDesactivacion(UPDATED_FECHA_DESACTIVACION);
 
         restUsuarioDependenciaMockMvc.perform(put("/api/usuario-dependencias")
             .contentType(MediaType.APPLICATION_JSON)
@@ -210,6 +228,8 @@ public class UsuarioDependenciaResourceIT {
         assertThat(testUsuarioDependencia.getFechaCreacion()).isEqualTo(UPDATED_FECHA_CREACION);
         assertThat(testUsuarioDependencia.getFechaModificacion()).isEqualTo(UPDATED_FECHA_MODIFICACION);
         assertThat(testUsuarioDependencia.isEstado()).isEqualTo(UPDATED_ESTADO);
+        assertThat(testUsuarioDependencia.getFechaActivacion()).isEqualTo(UPDATED_FECHA_ACTIVACION);
+        assertThat(testUsuarioDependencia.getFechaDesactivacion()).isEqualTo(UPDATED_FECHA_DESACTIVACION);
     }
 
     @Test
