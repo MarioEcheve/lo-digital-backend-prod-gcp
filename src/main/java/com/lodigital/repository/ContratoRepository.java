@@ -18,5 +18,12 @@ public interface ContratoRepository extends JpaRepository<Contrato, Long> {
     @Query("select a from Comuna a "
         +"inner join a.region b "
         +"where b.id = :id")
-    List<Comuna> buscaComunaPorRegion(@Param("id") Long id);    
+    List<Comuna> buscaComunaPorRegion(@Param("id") Long id);  
+
+    @Query("select a from Contrato a "
+        +"inner join a.dependenciaMandante b "
+        +"where b.id = :id or a.idDependenciaContratista = :id")
+    List<Comuna> buscaContratoPorDependencia(@Param("idDependencia") Long idDependencia);  
+    
+
 }
