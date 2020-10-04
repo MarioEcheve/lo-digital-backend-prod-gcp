@@ -28,5 +28,4 @@ public interface DependenciaRepository extends JpaRepository<Dependencia, Long> 
                 "left join perfil_usuario_dependencia pusr on pusr.id = ud.perfil_usuario_dependencia_id "+ 
                 "where d.id = :idDependencia", nativeQuery = true)
     List<Map<String, String>> buscaUsuariosDependencia(@Param("idDependencia") Long idDependencia);
-s
 }

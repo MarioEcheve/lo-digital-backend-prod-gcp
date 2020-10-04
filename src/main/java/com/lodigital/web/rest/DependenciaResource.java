@@ -144,9 +144,4 @@ public class DependenciaResource {
         String json = new ObjectMapper().writeValueAsString(dependenciaRepository.buscaUsuariosDependencia(idDependencia));
         return json;
     }
-    @GetMapping("/buscaUsuariosDependencia2/{idDependencia}")
-    public List<Dependencia> buscaUsuariosDependencia2(@PathVariable Long idDependencia) {
-        log.debug("REST request to get comunas  por region : {}", idDependencia);
-        return dependenciaRepository.buscaUsuariosDependencia2(idDependencia);
-    }
 }
