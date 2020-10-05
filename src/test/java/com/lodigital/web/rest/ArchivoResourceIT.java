@@ -41,6 +41,15 @@ public class ArchivoResourceIT {
     private static final String DEFAULT_SIZE = "AAAAAAAAAA";
     private static final String UPDATED_SIZE = "BBBBBBBBBB";
 
+    private static final String DEFAULT_NOMBRE = "AAAAAAAAAA";
+    private static final String UPDATED_NOMBRE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_URL_ARCHIVO = "AAAAAAAAAA";
+    private static final String UPDATED_URL_ARCHIVO = "BBBBBBBBBB";
+
+    private static final Boolean DEFAULT_STATUS = false;
+    private static final Boolean UPDATED_STATUS = true;
+
     @Autowired
     private ArchivoRepository archivoRepository;
 
@@ -63,7 +72,10 @@ public class ArchivoResourceIT {
             .archivo(DEFAULT_ARCHIVO)
             .archivoContentType(DEFAULT_ARCHIVO_CONTENT_TYPE)
             .descripcion(DEFAULT_DESCRIPCION)
-            .size(DEFAULT_SIZE);
+            .size(DEFAULT_SIZE)
+            .nombre(DEFAULT_NOMBRE)
+            .urlArchivo(DEFAULT_URL_ARCHIVO)
+            .status(DEFAULT_STATUS);
         return archivo;
     }
     /**
@@ -77,7 +89,10 @@ public class ArchivoResourceIT {
             .archivo(UPDATED_ARCHIVO)
             .archivoContentType(UPDATED_ARCHIVO_CONTENT_TYPE)
             .descripcion(UPDATED_DESCRIPCION)
-            .size(UPDATED_SIZE);
+            .size(UPDATED_SIZE)
+            .nombre(UPDATED_NOMBRE)
+            .urlArchivo(UPDATED_URL_ARCHIVO)
+            .status(UPDATED_STATUS);
         return archivo;
     }
 
@@ -104,6 +119,9 @@ public class ArchivoResourceIT {
         assertThat(testArchivo.getArchivoContentType()).isEqualTo(DEFAULT_ARCHIVO_CONTENT_TYPE);
         assertThat(testArchivo.getDescripcion()).isEqualTo(DEFAULT_DESCRIPCION);
         assertThat(testArchivo.getSize()).isEqualTo(DEFAULT_SIZE);
+        assertThat(testArchivo.getNombre()).isEqualTo(DEFAULT_NOMBRE);
+        assertThat(testArchivo.getUrlArchivo()).isEqualTo(DEFAULT_URL_ARCHIVO);
+        assertThat(testArchivo.isStatus()).isEqualTo(DEFAULT_STATUS);
     }
 
     @Test
@@ -159,7 +177,10 @@ public class ArchivoResourceIT {
             .andExpect(jsonPath("$.[*].archivoContentType").value(hasItem(DEFAULT_ARCHIVO_CONTENT_TYPE)))
             .andExpect(jsonPath("$.[*].archivo").value(hasItem(Base64Utils.encodeToString(DEFAULT_ARCHIVO))))
             .andExpect(jsonPath("$.[*].descripcion").value(hasItem(DEFAULT_DESCRIPCION)))
-            .andExpect(jsonPath("$.[*].size").value(hasItem(DEFAULT_SIZE)));
+            .andExpect(jsonPath("$.[*].size").value(hasItem(DEFAULT_SIZE)))
+            .andExpect(jsonPath("$.[*].nombre").value(hasItem(DEFAULT_NOMBRE)))
+            .andExpect(jsonPath("$.[*].urlArchivo").value(hasItem(DEFAULT_URL_ARCHIVO)))
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.booleanValue())));
     }
     
     @Test
@@ -176,7 +197,10 @@ public class ArchivoResourceIT {
             .andExpect(jsonPath("$.archivoContentType").value(DEFAULT_ARCHIVO_CONTENT_TYPE))
             .andExpect(jsonPath("$.archivo").value(Base64Utils.encodeToString(DEFAULT_ARCHIVO)))
             .andExpect(jsonPath("$.descripcion").value(DEFAULT_DESCRIPCION))
-            .andExpect(jsonPath("$.size").value(DEFAULT_SIZE));
+            .andExpect(jsonPath("$.size").value(DEFAULT_SIZE))
+            .andExpect(jsonPath("$.nombre").value(DEFAULT_NOMBRE))
+            .andExpect(jsonPath("$.urlArchivo").value(DEFAULT_URL_ARCHIVO))
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.booleanValue()));
     }
     @Test
     @Transactional
@@ -202,7 +226,10 @@ public class ArchivoResourceIT {
             .archivo(UPDATED_ARCHIVO)
             .archivoContentType(UPDATED_ARCHIVO_CONTENT_TYPE)
             .descripcion(UPDATED_DESCRIPCION)
-            .size(UPDATED_SIZE);
+            .size(UPDATED_SIZE)
+            .nombre(UPDATED_NOMBRE)
+            .urlArchivo(UPDATED_URL_ARCHIVO)
+            .status(UPDATED_STATUS);
 
         restArchivoMockMvc.perform(put("/api/archivos")
             .contentType(MediaType.APPLICATION_JSON)
@@ -217,6 +244,9 @@ public class ArchivoResourceIT {
         assertThat(testArchivo.getArchivoContentType()).isEqualTo(UPDATED_ARCHIVO_CONTENT_TYPE);
         assertThat(testArchivo.getDescripcion()).isEqualTo(UPDATED_DESCRIPCION);
         assertThat(testArchivo.getSize()).isEqualTo(UPDATED_SIZE);
+        assertThat(testArchivo.getNombre()).isEqualTo(UPDATED_NOMBRE);
+        assertThat(testArchivo.getUrlArchivo()).isEqualTo(UPDATED_URL_ARCHIVO);
+        assertThat(testArchivo.isStatus()).isEqualTo(UPDATED_STATUS);
     }
 
     @Test

@@ -27,6 +27,15 @@
             <column name="size" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
+            <column name="nombre" type="varchar(200)">
+                <constraints nullable="true" />
+            </column>
+            <column name="url_archivo" type="varchar(200)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <column name="folio_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -57,6 +66,9 @@
             <column name="archivo_content_type" type="string"/>
             <column name="descripcion" type="string"/>
             <column name="size" type="string"/>
+            <column name="nombre" type="string"/>
+            <column name="url_archivo" type="string"/>
+            <column name="status" type="boolean"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

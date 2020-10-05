@@ -26,6 +26,9 @@ export class ArchivoUpdateComponent implements OnInit {
     archivoContentType: [],
     descripcion: [null, [Validators.maxLength(500)]],
     size: [null, [Validators.required]],
+    nombre: [null, [Validators.maxLength(200)]],
+    urlArchivo: [null, [Validators.maxLength(200)]],
+    status: [],
     folio: [],
   });
 
@@ -53,6 +56,9 @@ export class ArchivoUpdateComponent implements OnInit {
       archivoContentType: archivo.archivoContentType,
       descripcion: archivo.descripcion,
       size: archivo.size,
+      nombre: archivo.nombre,
+      urlArchivo: archivo.urlArchivo,
+      status: archivo.status,
       folio: archivo.folio,
     });
   }
@@ -95,6 +101,9 @@ export class ArchivoUpdateComponent implements OnInit {
       archivo: this.editForm.get(['archivo'])!.value,
       descripcion: this.editForm.get(['descripcion'])!.value,
       size: this.editForm.get(['size'])!.value,
+      nombre: this.editForm.get(['nombre'])!.value,
+      urlArchivo: this.editForm.get(['urlArchivo'])!.value,
+      status: this.editForm.get(['status'])!.value,
       folio: this.editForm.get(['folio'])!.value,
     };
   }

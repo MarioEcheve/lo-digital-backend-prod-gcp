@@ -23,6 +23,26 @@
       "fieldValidateRules": [
         "required"
       ]
+    },
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "urlArchivo",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [

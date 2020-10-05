@@ -26,6 +26,9 @@
                     <th scope="col" ><span>Archivo</span></th>
                     <th scope="col" ><span>Descripcion</span></th>
                     <th scope="col" ><span>Size</span></th>
+                    <th scope="col" ><span>Nombre</span></th>
+                    <th scope="col" ><span>Url Archivo</span></th>
+                    <th scope="col" ><span>Status</span></th>
                     <th scope="col" ><span>Folio</span></th>
                     <th scope="col"></th>
                 </tr>
@@ -39,6 +42,9 @@
                     </td>
                     <td>{{ archivo.descripcion }}</td>
                     <td>{{ archivo.size }}</td>
+                    <td>{{ archivo.nombre }}</td>
+                    <td>{{ archivo.urlArchivo }}</td>
+                    <td>{{ archivo.status }}</td>
                     <td>
                         <div *ngIf="archivo.folio">
                             <a [routerLink]="['/folio', archivo.folio?.id, 'view']" >{{ archivo.folio?.numeroFolio }}</a>

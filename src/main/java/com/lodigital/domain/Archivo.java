@@ -37,6 +37,17 @@ public class Archivo implements Serializable {
     @Column(name = "size", nullable = false)
     private String size;
 
+    @Size(max = 200)
+    @Column(name = "nombre", length = 200)
+    private String nombre;
+
+    @Size(max = 200)
+    @Column(name = "url_archivo", length = 200)
+    private String urlArchivo;
+
+    @Column(name = "status")
+    private Boolean status;
+
     @ManyToOne
     @JsonIgnoreProperties(value = "archivos", allowSetters = true)
     private Folio folio;
@@ -102,6 +113,45 @@ public class Archivo implements Serializable {
         this.size = size;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Archivo nombre(String nombre) {
+        this.nombre = nombre;
+        return this;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getUrlArchivo() {
+        return urlArchivo;
+    }
+
+    public Archivo urlArchivo(String urlArchivo) {
+        this.urlArchivo = urlArchivo;
+        return this;
+    }
+
+    public void setUrlArchivo(String urlArchivo) {
+        this.urlArchivo = urlArchivo;
+    }
+
+    public Boolean isStatus() {
+        return status;
+    }
+
+    public Archivo status(Boolean status) {
+        this.status = status;
+        return this;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
     public Folio getFolio() {
         return folio;
     }
@@ -141,6 +191,9 @@ public class Archivo implements Serializable {
             ", archivoContentType='" + getArchivoContentType() + "'" +
             ", descripcion='" + getDescripcion() + "'" +
             ", size='" + getSize() + "'" +
+            ", nombre='" + getNombre() + "'" +
+            ", urlArchivo='" + getUrlArchivo() + "'" +
+            ", status='" + isStatus() + "'" +
             "}";
     }
 }
