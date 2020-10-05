@@ -12,5 +12,5 @@ handlers:
   script: auto
   secure: always
 basic_scaling:
-  max_instances: 10
+  max_instances: 4
 entrypoint: java -Dthin.root=. -jar backend-0.0.1-SNAPSHOT.jar
