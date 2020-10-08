@@ -1,6 +1,7 @@
 package com.lodigital.web.rest;
 
 import com.lodigital.domain.UsuarioDependencia;
+import com.lodigital.domain.User;
 import com.lodigital.repository.UsuarioDependenciaRepository;
 import com.lodigital.web.rest.errors.BadRequestAlertException;
 
@@ -14,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -32,13 +35,16 @@ public class UsuarioDependenciaResource {
 
     private static final String ENTITY_NAME = "usuarioDependencia";
 
+    private final PasswordEncoder passwordEncoder;
+
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
     private final UsuarioDependenciaRepository usuarioDependenciaRepository;
 
-    public UsuarioDependenciaResource(UsuarioDependenciaRepository usuarioDependenciaRepository) {
+    public UsuarioDependenciaResource(UsuarioDependenciaRepository usuarioDependenciaRepository ,  PasswordEncoder passwordEncoder) {
         this.usuarioDependenciaRepository = usuarioDependenciaRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     /**
@@ -138,5 +144,23 @@ public class UsuarioDependenciaResource {
     public String findContratosByUsuarioNormal(@PathVariable Long idUsuario) throws JsonProcessingException{
         String json = new ObjectMapper().writeValueAsString(usuarioDependenciaRepository.findContratosByUsuarioNormal(idUsuario));
         return json;
+    }
+    
+    @GetMapping("/validaClave/{clave}/{idUsuario}")
+    public String validaClave(@PathVariable String clave, @PathVariable Long idUsuario) throws JsonProcessingException{
+
+        String claveHash = passwordEncoder.encode(clave);
+        String claveActual = usuarioDependenciaRepository.buscarClavePorUsuario(idUsuario); 
+        log.debug("claveHash : {}", claveHash);
+        log.debug("claveActual : {}", claveActual);
+
+         if (!passwordEncoder.matches(clave, claveActual)) {
+                String json = new ObjectMapper().writeValueAsString("Error");
+                return json;
+        }else {
+            String json = new ObjectMapper().writeValueAsString("ok");
+            return json;
+        } 
+        //String claveActual = json.get("password");
     }
 }

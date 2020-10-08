@@ -1,6 +1,7 @@
 package com.lodigital.repository;
 
 import com.lodigital.domain.UsuarioDependencia;
+import com.lodigital.domain.User;
 
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
@@ -126,4 +127,8 @@ public interface UsuarioDependenciaRepository extends JpaRepository<UsuarioDepen
                         "es.id , "+
                         "es.nombre", nativeQuery = true)
     List<Map<String, String>> findContratosByUsuarioNormal(@Param("idUsuario") Long idUsuario);
+
+
+    @Query("select a.password from User a where a.id = :idUsuario")
+    String buscarClavePorUsuario(@Param("idUsuario") Long idUsuario);
 }
