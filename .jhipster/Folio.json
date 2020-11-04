@@ -69,10 +69,9 @@
       "fieldName": "asunto",
       "fieldType": "String",
       "fieldValidateRules": [
-        "maxlength",
-        "required"
+        "maxlength"
       ],
-      "fieldValidateRulesMaxlength": "250"
+      "fieldValidateRulesMaxlength": "350"
     },
     {
       "fieldName": "anotacion",
@@ -80,7 +79,7 @@
       "fieldValidateRules": [
         "maxlength"
       ],
-      "fieldValidateRulesMaxlength": "12000"
+      "fieldValidateRulesMaxlength": "12000000"
     },
     {
       "fieldName": "pdfFirmado",
@@ -98,6 +97,10 @@
     },
     {
       "fieldName": "poseeFolioReferencia",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "poseeArchivos",
       "fieldType": "Boolean"
     },
     {

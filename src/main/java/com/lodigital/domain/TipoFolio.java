@@ -22,8 +22,8 @@ public class TipoFolio implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Size(max = 20)
-    @Column(name = "nombre", length = 20)
+    @Size(max = 50)
+    @Column(name = "nombre", length = 50)
     private String nombre;
 
     @NotNull

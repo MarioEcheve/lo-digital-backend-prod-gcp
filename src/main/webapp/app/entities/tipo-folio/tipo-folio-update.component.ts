@@ -17,7 +17,7 @@ export class TipoFolioUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    nombre: [null, [Validators.maxLength(20)]],
+    nombre: [null, [Validators.maxLength(50)]],
     visibleMaestro: [null, [Validators.required]],
     visibleAuxliar: [null, [Validators.required]],
     visibleMandante: [null, [Validators.required]],

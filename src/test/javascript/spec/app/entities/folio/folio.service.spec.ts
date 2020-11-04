@@ -50,6 +50,7 @@ describe('Service Tests', () => {
         'AAAAAAA',
         0,
         false,
+        false,
         'AAAAAAA',
         'AAAAAAA'
       );
@@ -131,6 +132,7 @@ describe('Service Tests', () => {
             pdfLectura: 'BBBBBB',
             idReceptor: 1,
             poseeFolioReferencia: true,
+            poseeArchivos: true,
             emisorMarcado: 'BBBBBB',
             tipoFolioMarcado: 'BBBBBB',
           },
@@ -180,6 +182,7 @@ describe('Service Tests', () => {
             pdfLectura: 'BBBBBB',
             idReceptor: 1,
             poseeFolioReferencia: true,
+            poseeArchivos: true,
             emisorMarcado: 'BBBBBB',
             tipoFolioMarcado: 'BBBBBB',
           },

@@ -72,13 +72,12 @@ public class Folio implements Serializable {
     @Column(name = "fecha_lectura")
     private Instant fechaLectura;
 
-    @NotNull
-    @Size(max = 250)
-    @Column(name = "asunto", length = 250, nullable = false)
+    @Size(max = 350)
+    @Column(name = "asunto", length = 350)
     private String asunto;
 
-    @Size(max = 12000)
-    @Column(name = "anotacion", length = 12000)
+    @Size(max = 12000000)
+    @Column(name = "anotacion", length = 12000000)
     private String anotacion;
 
     @Lob
@@ -100,6 +99,9 @@ public class Folio implements Serializable {
 
     @Column(name = "posee_folio_referencia")
     private Boolean poseeFolioReferencia;
+
+    @Column(name = "posee_archivos")
+    private Boolean poseeArchivos;
 
     @Column(name = "emisor_marcado")
     private String emisorMarcado;
@@ -458,6 +460,19 @@ public class Folio implements Serializable {
         this.poseeFolioReferencia = poseeFolioReferencia;
     }
 
+    public Boolean isPoseeArchivos() {
+        return poseeArchivos;
+    }
+
+    public Folio poseeArchivos(Boolean poseeArchivos) {
+        this.poseeArchivos = poseeArchivos;
+        return this;
+    }
+
+    public void setPoseeArchivos(Boolean poseeArchivos) {
+        this.poseeArchivos = poseeArchivos;
+    }
+
     public String getEmisorMarcado() {
         return emisorMarcado;
     }
@@ -694,6 +709,7 @@ public class Folio implements Serializable {
             ", pdfLecturaContentType='" + getPdfLecturaContentType() + "'" +
             ", idReceptor=" + getIdReceptor() +
             ", poseeFolioReferencia='" + isPoseeFolioReferencia() + "'" +
+            ", poseeArchivos='" + isPoseeArchivos() + "'" +
             ", emisorMarcado='" + getEmisorMarcado() + "'" +
             ", tipoFolioMarcado='" + getTipoFolioMarcado() + "'" +
             "}";

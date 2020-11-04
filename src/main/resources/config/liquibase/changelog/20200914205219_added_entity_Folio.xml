@@ -63,10 +63,10 @@
             <column name="fecha_lectura" type="datetime">
                 <constraints nullable="true" />
             </column>
-            <column name="asunto" type="varchar(250)">
-                <constraints nullable="false" />
+            <column name="asunto" type="varchar(350)">
+                <constraints nullable="true" />
             </column>
-            <column name="anotacion" type="varchar(12000)">
+            <column name="anotacion" type="varchar(12000000)">
                 <constraints nullable="true" />
             </column>
             <column name="pdf_firmado" type="longblob">
@@ -85,6 +85,9 @@
                 <constraints nullable="true" />
             </column>
             <column name="posee_folio_referencia" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="posee_archivos" type="boolean">
                 <constraints nullable="true" />
             </column>
             <column name="emisor_marcado" type="varchar(255)">
@@ -165,6 +168,7 @@
             <column name="pdf_lectura_content_type" type="string"/>
             <column name="id_receptor" type="numeric"/>
             <column name="posee_folio_referencia" type="boolean"/>
+            <column name="posee_archivos" type="boolean"/>
             <column name="emisor_marcado" type="string"/>
             <column name="tipo_folio_marcado" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->

@@ -34,6 +34,7 @@ export interface IFolio {
   pdfLectura?: any;
   idReceptor?: number;
   poseeFolioReferencia?: boolean;
+  poseeArchivos?: boolean;
   emisorMarcado?: string;
   tipoFolioMarcado?: string;
   archivos?: IArchivo[];
@@ -73,6 +74,7 @@ export class Folio implements IFolio {
     public pdfLectura?: any,
     public idReceptor?: number,
     public poseeFolioReferencia?: boolean,
+    public poseeArchivos?: boolean,
     public emisorMarcado?: string,
     public tipoFolioMarcado?: string,
     public archivos?: IArchivo[],
@@ -89,5 +91,6 @@ export class Folio implements IFolio {
     this.estadoFolio = this.estadoFolio || false;
     this.entidadCreacion = this.entidadCreacion || false;
     this.poseeFolioReferencia = this.poseeFolioReferencia || false;
+    this.poseeArchivos = this.poseeArchivos || false;
   }
 }
