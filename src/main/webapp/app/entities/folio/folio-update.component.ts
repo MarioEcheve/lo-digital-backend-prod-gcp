@@ -52,7 +52,7 @@ export class FolioUpdateComponent implements OnInit {
     fechaFirma: [],
     fechaLectura: [],
     asunto: [null, [Validators.maxLength(350)]],
-    anotacion: [null, [Validators.maxLength(12000000)]],
+    anotacion: [null, [Validators.maxLength(10485760)]],
     pdfFirmado: [],
     pdfFirmadoContentType: [],
     pdfLectura: [],
