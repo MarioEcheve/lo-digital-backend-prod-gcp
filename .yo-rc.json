@@ -36,15 +36,15 @@
     "otherModules": [],
     "enableTranslation": false,
     "blueprints": [],
-    "gcpProjectId": "lo-digital",
+    "gcpProjectId": "lo-digital-295201",
     "gcpCloudSqlInstanceName": "",
     "gcpCloudSqlUserName": "fvilches",
     "gcpCloudSqlDatabaseName": "lodigital",
     "gaeServiceName": "backend",
-    "gaeLocation": "northamerica-northeast1",
-    "gaeInstanceClass": "B4_1G",
-    "gaeScalingType": "basic",
-    "gaeMaxInstances": "4",
-    "gaeCloudSQLInstanceNeeded": "Y"
+    "gaeLocation": "us-central",
+    "gaeInstanceClass": "B8",
+    "gaeScalingType": "manual",
+    "gaeCloudSQLInstanceNeeded": "Y",
+    "gaeInstances": "1"
   }
 }
